@@ -61,7 +61,7 @@ a {
   margin-left: 40px;
 }
 
-.nav-bottom .create-btn {
+.nav-bottom .pre-btn {
   display: inline-block;
   position: relative;
   top: 96px;
@@ -73,7 +73,7 @@ a {
   background-color: black;
 }
 
-.nav-bottom .create-btn span {
+.nav-bottom .pre-btn span {
   font-size: 80px;
   font-family: 'Nanum Gothic', sans-serif;
   color: white;

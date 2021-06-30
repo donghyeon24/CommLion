@@ -2,23 +2,20 @@
 {% load static %}
 
 {% block link %}
-<link rel="stylesheet" href="{% static 'css/qna_write.css' %}">
+<link rel="stylesheet" href="{% static 'css/qna-write.css' %}">
 {% endblock %}
 
 {% block content %}
 <form action="POST">
-  <div class = "divupload">
-    <label for="file_name" clss="file">
+  <div class="divupload">
+    <label for="file_name" class="file">
       <i class="fas fa-camera fa-7x"></i>
     </label>
   </div>
-
-  <!--Input태그 입력-->
   <input class="upload" type="file" name="img" id="file_name" class="upload-hidden">
   <input type="text" class="write_input" placeholder="질문 제목">
   <input type="text" class="write_input_last" placeholder="#해시태그">
-  <textarea class="write_input_area" placeholder=
-  "7th Session에 질문할 내용을 작성해주세요. (최대한 상세히 작성하면 더욱 좋은 답변을 얻을 수 있을 거에요.)">
-  </textarea>
+  <textarea class="write_input_area"
+    placeholder="7th Session에 질문할 내용을 작성해주세요. (최대한 상세히 작성하면 더욱 좋은 답변을 얻을 수 있을 거에요.)"></textarea>
 </form>
 {% endblock %}

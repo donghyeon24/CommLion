@@ -19,7 +19,7 @@ a {
 }
 
 .navbar .left i {
-  font-size: 40px;
+  font-size: 48px;
 }
 
 .navbar .center {
@@ -29,6 +29,8 @@ a {
 }
 
 .navbar .right {
+  border: none;
+  background-color: white;
   font-size: 48px;
   font-weight: 800;
   font-family: 'Roboto';
