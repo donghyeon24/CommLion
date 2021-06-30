@@ -8,7 +8,8 @@
 {% endblock %}
 
 {% block content %}
-<form action="POST">
+<form method="POST" id="done">
+  {% csrf_token %}
   <div class = "divupload">
     <label for="file_name" class="file">
       <i class="fas fa-camera fa-7x"></i>
@@ -16,9 +17,8 @@
   </div>
 
   <!--Input태그 입력-->
-  <input class="upload" type="file" name="img" id="file_name" class="upload-hidden">
-  <input type="text" class="write_input" placeholder="세션 제목">
-  <input type="text" class="write_input_last" placeholder="내용"><br>
+  <input type="text" class="write_input" name="title" placeholder="세션 제목">
+  <input type="text" class="write_input_last" name="content" placeholder="내용"><br>
 
 </form>
 {% endblock %}
