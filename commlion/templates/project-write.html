@@ -1,16 +1,16 @@
 {% extends 'write-nav.html' %}
 {% load static %}
 
-<script src="{% static 'js/project-write.js' %}" ></script>
+<script src="{% static 'js/project-write.js' %}"></script>
 {% block link %}
 <link rel="stylesheet" href="{% static 'css/project-write.css' %}">
-<script type="text/javascript" src="{% static 'js/project-write.js' %}" ></script>
+<script type="text/javascript" src="{% static 'js/project-write.js' %}"></script>
 {% endblock %}
 
 {% block content %}
 <form action="POST">
-  <div class = "divupload">
-    <label for="file_name" clss="file">
+  <div class="divupload">
+    <label for="file_name" class="file">
       <i class="fas fa-camera fa-7x"></i>
     </label>
   </div>
