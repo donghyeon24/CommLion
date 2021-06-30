@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:wght@700&display=swap");
 
 body {
   margin: 0;
@@ -100,7 +99,7 @@ a {
 .nav-bottom .create-btn {
   display: inline-block;
   position: relative;
-  top: 96px;
+  top: 90px;
   width: 140px;
   height: 140px;
   padding-right: 20px;
@@ -118,7 +117,7 @@ a {
 .nav-bottom .nav-bottom-real {
   position: relative;
   left: 200px;
-  bottom: 48px;
+  bottom: 60px;
   width: calc(100vw - 260px);
   padding-left: 0;
   white-space: nowrap;
@@ -154,13 +153,12 @@ a {
   border-radius: 30px;
   background-color: black;
 }
-
 .container .create-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  bottom: 200px;
+  bottom: 220px;
   right: 36px;
   width: 140px;
   height: 140px;
@@ -170,6 +168,7 @@ a {
 }
 
 .container .create-btn span {
-  font-size: 134px;
+  font-size: 112px;
+  font-family: "Nanum Gothic", sans-serif;
   color: white;
 }
