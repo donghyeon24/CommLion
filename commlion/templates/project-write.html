@@ -9,21 +9,22 @@
 
 {% block content %}
 <form action="POST">
-  <div class="top">
-    <div class = "divupload">
-      <label for="file_name" clss="file">
-        <i class="fas fa-camera fa-7x"></i>
-      </label>
-    </div>
+  <div class = "divupload">
+    <label for="file_name" clss="file">
+      <i class="fas fa-camera fa-7x"></i>
+    </label>
   </div>
+
+  <!--Input태그 입력-->
   <input class="upload" type="file" name="img" id="file_name" class="upload-hidden">
   <input type="text" class="write_input" placeholder="서비스 이름">
   <input type="text" class="write_input" placeholder="서비스 소개">
   <input type="text" class="write_input" placeholder="함께한 사람들">
   <input type="text" class="write_input" placeholder="개발 기간">
   <input type="text" class="write_input" placeholder="개발 스택">
-  <input type="text" class="write_input_last" placeholder="참고 자료">
-  <br>
+  <input type="text" class="write_input_last" placeholder="참고 자료"><br>
+
+  <!--개발 상태 버튼-->
   <div class="state-btn">
     <button class="state-btn-developing" value="developing">개발중</button>
     <button class="state-btn-developed" value="done">개발완료</button>

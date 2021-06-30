@@ -73,48 +73,26 @@ input {
   font-style: normal;
   font-weight: 500;
   font-size: 48px;
-  height: 198px;
+  height: 188px;
   margin-left: 60px;
   margin-bottom: 0px;
+  vertical-align: top;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   font-family: "Roboto";
   font-size: 48px;
   color: #e5e5e5;
+  white-space: norma;
 }
 
-.state-btn {
-  text-align: center;
-}
-
-.state-btn-developing {
-  width: 311px;
-  margin-inline: 20px;
-  height: 90.24px;
-  border: 2px solid #201bff;
-  box-sizing: border-box;
-  border-radius: 40px;
+.write_input_area {
+  border: none;
+  margin-left: 60px;
+  height: 900px;
+  width: 960px;
+  font-size: 40px;
+  padding-top: 20px;
   font-family: "Roboto";
-  font-size: 24px;
-  font-weight: bold;
-  color: #201bff;
-  margin-top: 102px;
-  background-color: white;
-  margin-right: 53px;
-}
-
-.state-btn-developed {
-  width: 311px;
-  height: 90.24px;
-  margin-inline: 20px;
-  border: 2px solid #ff1b29;
-  box-sizing: border-box;
-  border-radius: 40px;
-  font-family: "Roboto";
-  font-size: 24px;
-  font-weight: bold;
-  color: #ff1b29;
-  margin-top: 102px;
-  background-color: white;
 }
