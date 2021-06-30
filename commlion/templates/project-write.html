@@ -1,25 +1,29 @@
 {% extends 'write-nav.html' %}
 {% load static %}
 
+<script src="{% static 'js/project-write.js' %}" ></script>
 {% block link %}
 <link rel="stylesheet" href="{% static 'css/project-write.css' %}">
+<script type="text/javascript" src="{% static 'js/project-write.js' %}" ></script>
 {% endblock %}
 
 {% block content %}
 <form action="POST">
-  <input class="upload" type="file" name="img">
-  <p class="write-input">서비스 이름</p>
-  <input type="text">
-  <p class="write-input">서비스 소개</p>
-  <input type="text">
-  <p class="write-input">함께한 사람들</p>
-  <input type="text">
-  <p class="write-input">개발 기간</p>
-  <input type="text">
-  <p class="write-input">개발 스택</p>
-  <input type="text">
-  <p class="write-input">참고 자료</p>
-  <input type="text"><br>
+  <div class="top">
+    <div class = "divupload">
+      <label for="file_name" clss="file">
+        <i class="fas fa-camera fa-7x"></i>
+      </label>
+    </div>
+  </div>
+  <input class="upload" type="file" name="img" id="file_name" class="upload-hidden">
+  <input type="text" class="write_input" placeholder="서비스 이름">
+  <input type="text" class="write_input" placeholder="서비스 소개">
+  <input type="text" class="write_input" placeholder="함께한 사람들">
+  <input type="text" class="write_input" placeholder="개발 기간">
+  <input type="text" class="write_input" placeholder="개발 스택">
+  <input type="text" class="write_input_last" placeholder="참고 자료">
+  <br>
   <div class="state-btn">
     <button class="state-btn-developing" value="developing">개발중</button>
     <button class="state-btn-developed" value="done">개발완료</button>
