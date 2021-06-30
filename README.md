@@ -27,5 +27,5 @@
 
 ## 📗 참고 자료
 
-- Notion : https://www.notion.so/CommLion-efd4f4c107fc49e495ee10b6eb56c625
+- Notion : https://www.notion.so/COMMLION-80d4881591e4479dbc5285073fb3d49a
 - Figma : https://www.figma.com/file/va50YVrt9EbwSx8cLSlNkJ/LIKELION_Community-team-library?node-id=0%3A1
