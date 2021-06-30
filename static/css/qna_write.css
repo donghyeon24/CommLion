@@ -55,7 +55,6 @@ input {
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
-  color: black;
 }
 
 .write_input {
@@ -80,11 +79,12 @@ input {
   vertical-align: top;
 }
 
-input::placeholder textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
   font-family: "Roboto";
   font-size: 48px;
-  color: black;
-  white-space: normal;
+  color: #e5e5e5;
+  white-space: norma;
 }
 
 .write_input_area {
@@ -95,11 +95,4 @@ input::placeholder textarea::placeholder {
   font-size: 40px;
   padding-top: 20px;
   font-family: "Roboto";
-}
-
-.write_input::placeholder {
-  font-family: "Roboto";
-  font-size: 48px;
-  color: black;
-  white-space: normal;
 }

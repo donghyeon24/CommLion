@@ -126,13 +126,14 @@ h1 {
 .nav-bottom .create-btn {
   display: inline-block;
   position: relative;
-  top: 80px;
+  top: 95px;
   width: 140px;
   height: 140px;
   padding-right: 20px;
   border-style: none;
   border-radius: 100px;
   background-color: black;
+  margin-left: -20px;
 }
 
 .nav-bottom .create-btn span {
@@ -143,8 +144,8 @@ h1 {
 
 .nav-bottom .nav-bottom-real {
   position: relative;
-  left: 200px;
-  bottom: 70px;
+  left: 180px;
+  bottom: 50px;
   width: calc(100vw - 260px);
   padding-left: 0;
   white-space: nowrap;

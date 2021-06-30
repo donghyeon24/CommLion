@@ -20,7 +20,7 @@ a {
 }
 .container .project-post {
   width: 960px;
-  height: 800px;
+  height: 772px;
   margin-left: 60px;
   background: #f8f8fa;
   box-shadow: 0 10px 10px -10px black;
@@ -43,15 +43,13 @@ a {
   color: #fe931b;
   margin-top: 20px;
   margin-left: 40px;
-  z-index: 0;
 }
 
 .container .project-post .content {
-  font-family: "Roboto";
+  font-family: "Nanum Gothic", sans-serif;
   font-size: 28px;
   margin-left: 40px;
   margin-top: 5px;
-  z-index: 0;
 }
 
 .container .project-post .status_dev {
@@ -99,7 +97,7 @@ a {
 .nav-bottom .create-btn {
   display: inline-block;
   position: relative;
-  top: 90px;
+  top: 96px;
   width: 140px;
   height: 140px;
   padding-right: 20px;
@@ -117,7 +115,7 @@ a {
 .nav-bottom .nav-bottom-real {
   position: relative;
   left: 200px;
-  bottom: 60px;
+  bottom: 50px;
   width: calc(100vw - 260px);
   padding-left: 0;
   white-space: nowrap;
