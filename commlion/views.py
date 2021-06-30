@@ -44,17 +44,16 @@ def projectWrite(request):
 
 
 def sessionWrite(request):
+  if request.method == 'POST':
+    SessionPost = SessionPost()
+    SessionPost.session_num = 0
+    SessionPost.session_year = 0
+    SessionPost.session_content = request.POST['content']
+    SessionPost.session_title = request.POST['title']
+    SessionPost.session_file = request.FILES['img']
+    SessionPost.save()
+
+    return redirect('session')
+  else:
     return render(request, 'session-write.html')
 
-# def sessionWrite(request):
-#   if request.method == 'POST':
-#     SessionPost = SessionPost()
-#     PublicPost.name = request.POST['name']
-#     PublicPost.title = request.POST['title']
-#     PublicPost.img = request.FILES['img']
-
-
-#     PublicPost.save()
-#     return render(request,"session.html")
-#   else:
-#     return render(request, 'session-write.html')
