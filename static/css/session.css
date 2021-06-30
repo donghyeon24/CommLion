@@ -56,38 +56,23 @@ a {
 }
 
 .nav-bottom {
-  display: flex;
+  /* display: flex;
   position: fixed;
-  bottom: 60px;
+  bottom: 60px; */
+  /* height: 100%; */
   margin-left: 40px;
 }
 
-.nav-bottom .nav-bottom-real {
-  display: flex;
-  align-items: center;
-  overflow-x: auto;
-}
-
-.nav-bottom .nav-bottom-real div {
-  width: 150px;
-  margin-right: 4px;
-  font-size: 48px;
-  font-weight: bold;
-  font-family: 'roboto';
-  color: #767676;
-}
-
-.nav-bottom .nav-bottom-real .nav-bottom-active {
-  color: black;
-}
-
 .nav-bottom .create-btn {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  display: inline-block;
+  position: relative;
+  top: 96px;
   width: 140px;
   height: 140px;
-  margin-right: 80px;
+  /* margin-right: 80px; */
   border-style: none;
   border-radius: 100px;
   background-color: black;
@@ -96,4 +81,28 @@ a {
 .nav-bottom .create-btn span {
   font-size: 112px;
   color: white;
+}
+
+.nav-bottom .nav-bottom-real {
+  /* display: flex;
+  align-items: center; */
+  position: relative;
+  left: 200px;
+  bottom: 8px;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+.nav-bottom .nav-bottom-real div {
+  display: inline-block;
+  width: 150px;
+  margin-right: 4px;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: 'Roboto';
+  color: #767676;
+}
+
+.nav-bottom .nav-bottom-real .nav-bottom-active {
+  color: black;
 }
