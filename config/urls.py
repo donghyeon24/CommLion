@@ -29,4 +29,5 @@ urlpatterns = [
     path('project/main/', views.projectMain, name='projectMain'),
     path('project/detail/', views.projectDetail, name='projectDetail'),
     path('project/write/', views.projectWrite, name='projectWrite'),
+    path('session/write/', views.sessionWrite, name='sessionWrite'),
 ]
