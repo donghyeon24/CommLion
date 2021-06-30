@@ -1,0 +1,26 @@
+{% extends 'detail-nav.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/project-detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="project-detail">
+  <h1>(서비스이름)</h1>
+  <p class="state">(개발현황)</p>
+  <img src="" alt="">
+  <div class="project-detail">
+    <h3>🏀 서비스 소개</h3>
+    <p>(서비스소개)</p>
+    <h3>😀 함께한 사람들</h3>
+    <p>(개발인원)</p>
+    <h3>📆 개발 기간</h3>
+    <p>(개발 날짜)</p>
+    <h3>💻 개발 스택</h3>
+    <p>(개발 스택)</p>
+    <h3>📗 참고 자료</h3>
+    <p>(참고 자료)</p>
+  </div>
+</div>
+{% endblock %}

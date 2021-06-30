@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@700&display=swap');
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+input {
+  width: 960px;
+  border: none;
+  border-bottom: 2px solid rgb(206, 206, 206);
+  margin-bottom: 30px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.write-input {
+  color: #e5e5e5;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+}
+
+.upload {
+  width: 180px;
+  height: 180px;
+  background-image: url('');
+}
+
+p {
+  font-family: 'Roboto';
+  font-size: 48px;
+  color: #e5e5e5;
+}

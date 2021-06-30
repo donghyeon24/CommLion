@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@700&display=swap');
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  margin: 0px;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+img {
+  width: 100vw;
+  height: 700px;
+}
+
+.writer {
+  width: 480px;
+  height: 50px;
+  font-family: roboto;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 60px;
+  color: #767676;
+  margin-top: 30px;
+}
+
+.question {
+  width: 100vw;
+  height: 90px;
+  font-family: roboto;
+  font-size: 48px;
+  font-weight: bold;
+  margin-left: 60px;
+}
+
+.hashtag {
+  width: 150px;
+  height: 60px;
+  border-radius: 40px;
+  color: #fe931b;
+  border-color: #fe931b;
+  margin-right: 20px;
+  font-family: roboto;
+  font-size: 24px;
+  background-color: white;
+}
+
+.hashtag2 {
+  margin-left: 65px;
+  display: flex;
+}
+
+.contents {
+  height: 400px;
+  font-family: roboto;
+  font-size: 24px;
+  font-weight: lighter;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 40px;
+}
+
+.answer {
+  margin-left: 65px;
+  font-size: 30px;
+  margin-top: 33px;
+  font-family: roboto;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 45px;
+  border-top: 2px solid #e5e5e5;
+  border-bottom: 2px solid #e5e5e5;
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.solve {
+  color: blue;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  height: 552px;
+}
+.comment {
+  display: flex;
+  flex-direction: row;
+}
+
+.recommend {
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 65px;
+  text-align: left;
+  margin-top: 48px;
+  width: 60px;
+  text-align: center;
+}
+
+.comment-writer {
+  font-family: roboto;
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 20px;
+  margin-top: 48px;
+}
+
+.comment-contents {
+  width: 870px;
+  height: 148px;
+  margin-top: 10px;
+  font-family: roboto;
+  font-weight: lighter;
+  font-size: 24px;
+  color: #767676;
+}
+
+.recomment {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #767676;
+}
+
+.writing {
+  border-top: 2px solid #e5e5e5;
+  border-bottom: 2px solid #e5e5e5;
+  top: 99vh;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 52px;
+  align-items: center;
+  color: #767676;
+}
+
+.input_content {
+  text-align: center;
+  width: 870px;
+  height: 96px;
+  background-color: #e5e5e5;
+  border-radius: 50px;
+  margin-left: 38px;
+  border: none;
+  color: #767676;
+  font-size: 40px;
+}

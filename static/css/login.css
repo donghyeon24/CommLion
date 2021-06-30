@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@700&display=swap');
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  margin-top: 320px;
+}
+
+.container .item1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Roboto';
+  font-size: 96px;
+  font-weight: bold;
+  margin-bottom: 176px;
+}
+
+.container .login .loginbox {
+  box-sizing: border-box;
+  width: 870px;
+  height: 130px;
+  padding-left: 40px;
+  border-radius: 10px;
+  border-color: rgb(118, 118, 118);
+  font-size: 48px;
+  margin-bottom: 39.8px;
+}
+
+.container .login-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 870px;
+}
+
+.container .login-menu .keep-login {
+  display: flex;
+}
+
+.container .login-menu input {
+  width: 40px;
+  height: 40px;
+}
+
+.container .login-menu a {
+  margin-left: 8px;
+  font-size: 32px;
+  font-weight: 500;
+  color: #767676;
+}
+
+.container .loginbtn {
+  width: 870px;
+  height: 130px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  font-family: 'Roboto';
+  font-size: 48px;
+  margin-top: 160px;
+}

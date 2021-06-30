@@ -1,0 +1,22 @@
+{% extends 'menu-nav.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/project-main.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- {% for in %}
+  {% endfor %} -->
+<div class="project-post">
+  <img src="" alt="">
+  <p class="title">(서비스이름)</p>
+  <p class="content">(서비스소개)</p>
+  <p class="content">(개발인원)</p>
+  <p class="content">(개발 날짜)</p>
+  <p class="writer">(개발현황)</p>
+</div>
+
+<img class="project_write_btn" src="" alt="">
+{% endblock %}

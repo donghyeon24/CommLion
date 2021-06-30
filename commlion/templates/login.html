@@ -1,0 +1,26 @@
+{% extends 'index-nav.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="item1">
+    CommLion
+  </div>
+  <form class="login">
+    <input type="text" placeholder="아이디" class="loginbox"><br>
+    <input type="password" placeholder="비밀번호" class="loginbox">
+  </form>
+  <div class="login-menu">
+    <div class="keep-login">
+      <input type="checkbox" name="xxx" value="yyy" checked>
+      <a href="#">로그인 유지</a>
+    </div>
+    <a href="#">아이디/비밀번호 찾기</a>
+  </div>
+  <button class="loginbtn">로그인</button>
+</div>
+{% endblock %}

@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@700&display=swap');
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+input {
+  width: 960px;
+  border: none;
+  border-bottom: 2px solid rgb(206, 206, 206);
+  margin-bottom: 30px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.upload {
+  width: 180px;
+  height: 180px;
+  background-image: url('');
+}
+
+.write-input {
+  color: #e5e5e5;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+}
+
+.state-btn {
+  text-align: center;
+}
+
+.state-btn-developing {
+  width: 311px;
+  margin-inline: 20px;
+  height: 90.24px;
+  border: 2px solid #201bff;
+  box-sizing: border-box;
+  border-radius: 40px;
+  font-family: 'Roboto';
+  font-size: 24px;
+  color: #201bff;
+}
+
+.state-btn-developed {
+  width: 311px;
+  height: 90.24px;
+  margin-inline: 20px;
+  border: 2px solid #ff1b29;
+  box-sizing: border-box;
+  border-radius: 40px;
+  font-family: 'Roboto';
+  font-size: 24px;
+  color: #ff1b29;
+}
+
+.upload {
+  width: 180px;
+  height: 180px;
+  background-image: url('');
+}
