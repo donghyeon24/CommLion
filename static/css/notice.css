@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:wght@700&display=swap');
 
 body {
   margin: 0;
@@ -9,32 +9,62 @@ a {
   color: black;
 }
 
-.notice-post {
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 250px);
+  padding: 0 60px;
+  margin-top: 100px;
+}
+
+.container .notice-post {
+  box-sizing: border-box;
   width: 960px;
-  padding: 30px;
+  padding: 20px 30px 10px 30px;
+  margin-bottom: 55px;
   background: #f8f8fa;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.notice-post > .title {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
+.container .notice-post .title {
+  font-family: 'Roboto', 'Nanum Gothic', sans-serif;
+  font-weight: 800;
   font-size: 32px;
+  color: #ff9e1b;
 }
 
-.notice-post > .content {
+.container .notice-post .content {
+  padding: 0 32px;
   font-family: 'Roboto';
-  font-style: normal;
   font-weight: 500;
   font-size: 32px;
 }
 
-.notice-post > .writer {
+.container .notice-post .writer {
   font-family: 'Roboto';
-  font-style: normal;
-  font-weight: bold;
+  font-weight: 800;
   font-size: 16px;
   color: #767676;
   text-align: right;
+}
+
+.container .create-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 220px;
+  right: 36px;
+  width: 140px;
+  height: 140px;
+  border-style: none;
+  border-radius: 100px;
+  background-color: black;
+}
+
+.container .create-btn span {
+  font-size: 134px;
+  color: white;
 }
