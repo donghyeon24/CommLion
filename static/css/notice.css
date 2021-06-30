@@ -55,7 +55,7 @@ a {
   justify-content: center;
   align-items: center;
   position: fixed;
-  bottom: 220px;
+  bottom: 80px;
   right: 36px;
   width: 140px;
   height: 140px;
@@ -65,6 +65,7 @@ a {
 }
 
 .container .create-btn span {
-  font-size: 134px;
+  font-size: 112px;
+  font-family: 'Nanum Gothic', sans-serif;
   color: white;
 }
