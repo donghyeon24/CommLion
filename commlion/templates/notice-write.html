@@ -1,0 +1,19 @@
+{% extends 'write-nav.html' %}
+{% load static %}
+
+<script src="{% static 'js/notice-write.js' %}" ></script>
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/notice-write.css' %}">
+<script type="text/javascript" src="{% static 'js/notice-write.js' %}" ></script>
+{% endblock %}
+
+{% block content %}
+<form method="POST" id="done">
+  {% csrf_token %}
+
+  <!--Input태그 입력-->
+  <input type="text" class="write_input" name="title" placeholder="공지사항 제목">
+  <input type="text" class="write_input_last" name="content" placeholder="내용"><br>
+
+</form>
+{% endblock %}

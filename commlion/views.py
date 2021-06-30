@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.utils import timezone
+from datetime import time
+from .models import NoticePost, SessionPost, Student
 
 # Create your views here.
 
@@ -44,17 +47,31 @@ def projectWrite(request):
 
 
 def sessionWrite(request):
-    return render(request, 'session-write.html')
+    if request.method == 'POST':
+        sessionPost = SessionPost()
+        sessionPost.session_num = 0
+        sessionPost.session_year = 0
+        sessionPost.session_content = request.POST['content']
+        sessionPost.session_title = request.POST['title']
+        sessionPost.session_file = request.FILES['img']
+        sessionPost.student_id = Student.objects.get(student_id=0)
+        sessionPost.save()
 
-# def sessionWrite(request):
-#   if request.method == 'POST':
-#     SessionPost = SessionPost()
-#     PublicPost.name = request.POST['name']
-#     PublicPost.title = request.POST['title']
-#     PublicPost.img = request.FILES['img']
+        return redirect('session')
+    else:
+        return render(request, 'session-write.html')
 
 
-#     PublicPost.save()
-#     return render(request,"session.html")
-#   else:
-#     return render(request, 'session-write.html')
+def noticeWrite(request):
+    if request.method == 'POST':
+        noticePost = NoticePost()
+        noticePost.content = request.POST['content']
+        noticePost.title = request.POST['title']
+        noticePost.pub_date = timezone.datetime.now()
+        noticePost.student_id = Student.objects.get(student_id=0)
+        # 아이디값 변경
+        noticePost.save()
+
+        return redirect('notice')
+    else:
+        return render(request, 'notice-write.html')
