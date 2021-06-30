@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 
 body {
   margin: 0;
@@ -119,59 +120,64 @@ h1 {
   font-size: 40px;
   text-align: center;
   align-self: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+  margin-top: 20px;
 }
 
-.nav_bottom {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-self: center;
+.nav-bottom .create-btn {
+  display: inline-block;
+  position: relative;
+  top: 96px;
+  width: 140px;
+  height: 140px;
+  padding-right: 20px;
+  border-style: none;
+  border-radius: 100px;
+  background-color: black;
 }
 
-.nav_bottom .nav_bottom_real {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+.nav-bottom .create-btn span {
+  font-size: 80px;
+  font-family: "Nanum Gothic", sans-serif;
+  color: white;
+}
+
+.nav-bottom .nav-bottom-real {
+  position: relative;
+  left: 200px;
+  bottom: 48px;
+  width: calc(100vw - 260px);
+  padding-left: 0;
+  white-space: nowrap;
   overflow-x: auto;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-}
-.nav_bottom .nav_bottom_real .nav_bottom_inactive {
-  width: 150px;
-  height: 200px;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  flex-direction: row;
-  font-family: roboto;
-  font-size: 60px;
-  font-weight: bold;
-  color: #767676;
-  margin-left: 50px;
-  justify-content: center;
-  align-items: center;
-  line-height: 150px;
+  list-style: none;
 }
 
-.nav_bottom .nav_bottom_real .nav_bottom_active {
+.nav-bottom .nav-bottom-real li {
+  display: inline-block;
   width: 150px;
-  height: 200px;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  flex-direction: row;
-  font-family: "Roboto";
-  font-size: 60px;
+  height: 100px;
+  margin-right: 4px;
+  font-size: 48px;
   font-weight: bold;
+  font-family: "Roboto";
+  color: #767676;
+}
+
+.nav-bottom .nav-bottom-real li span {
+  position: relative;
+  top: 16px;
+}
+
+.nav-bottom .nav-bottom-real .nav-bottom-active span {
   color: black;
-  margin-left: 50px;
-  text-emphasis-style: filled circle;
-  justify-content: center;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 150px;
+}
+
+.nav-bottom .nav-bottom-real .nav-bottom-active .selected-mark {
+  position: relative;
+  left: 48px;
+  width: 12px;
+  height: 12px;
+  border-radius: 30px;
+  background-color: black;
 }
