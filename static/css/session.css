@@ -16,19 +16,19 @@ a {
   height: 1800px;
   margin-top: 100px;
   overflow-x: auto;
-  z-index: 0;
 }
 
 .container .title {
   position: relative;
-  left: -60px;
+  left: -40px;
   margin-bottom: 72px;
   text-align: left;
   font-size: 96px;
   font-weight: 800;
   font-family: "Roboto", sans-serif;
   line-height: 112px;
-  letter-spacing: -10px;
+  letter-spacing: -8px;
+  word-spacing: 12px;
 }
 
 .container img {
@@ -52,7 +52,8 @@ a {
 }
 
 .container .create-btn span {
-  font-size: 134px;
+  font-size: 112px;
+  font-family: 'Nanum Gothic', sans-serif;
   color: white;
 }
 
@@ -66,28 +67,33 @@ a {
   top: 96px;
   width: 140px;
   height: 140px;
+  padding-right: 20px;
   border-style: none;
   border-radius: 100px;
   background-color: black;
 }
 
 .nav-bottom .create-btn span {
-  font-size: 112px;
+  font-size: 80px;
+  font-family: 'Nanum Gothic', sans-serif;
   color: white;
 }
 
 .nav-bottom .nav-bottom-real {
   position: relative;
   left: 200px;
-  bottom: 8px;
+  bottom: 48px;
   width: calc(100vw - 260px);
+  padding-left: 0;
   white-space: nowrap;
   overflow-x: auto;
+  list-style: none;
 }
 
-.nav-bottom .nav-bottom-real div {
+.nav-bottom .nav-bottom-real li {
   display: inline-block;
   width: 150px;
+  height: 100px;
   margin-right: 4px;
   font-size: 48px;
   font-weight: bold;
@@ -95,6 +101,20 @@ a {
   color: #767676;
 }
 
-.nav-bottom .nav-bottom-real .nav-bottom-active {
+.nav-bottom .nav-bottom-real li span {
+  position: relative;
+  top: 16px;
+}
+
+.nav-bottom .nav-bottom-real .nav-bottom-active span {
   color: black;
+}
+
+.nav-bottom .nav-bottom-real .nav-bottom-active .selected-mark {
+  position: relative;
+  left: 48px;
+  width: 12px;
+  height: 12px;
+  border-radius: 30px;
+  background-color: black;
 }
