@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:wght@700&display=swap");
 
 body {
   margin: 0;
@@ -62,7 +62,7 @@ img {
 
 .contents {
   height: 400px;
-  font-family: roboto;
+  font-family: "Nanum Gothic", sans-serif;
   font-size: 24px;
   font-weight: lighter;
   margin-left: 60px;

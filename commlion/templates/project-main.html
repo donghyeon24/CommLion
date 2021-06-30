@@ -65,22 +65,33 @@
     </div>
     <div class="status_dev">개발중</div>
   </div>
+  
+  <!--글쓰기 버튼-->
+  <button class="create-btn" onclick="location.href='{% url 'projectWrite' %}'">
+    <span>+</span>
+  </button>
+
 </div>
 
-<footer class="nav_bottom">
-  <i class="fas fa-angle-double-left fa-10x"></i>
-  <div class="nav_bottom_real">
-      <div class="nav_bottom_active">10th</div>   
-      <div class="nav_bottom_inactive">9th</div>
-      <div class="nav_bottom_inactive">8th</div> 
-      <div class="nav_bottom_inactive">7th</div> 
-      <div class="nav_bottom_inactive">6th</div> 
-      <div class="nav_bottom_inactive">5th</div>
-      <div class="nav_bottom_inactive">4th</div>   
-      <div class="nav_bottom_inactive">3th</div> 
-      <div class="nav_bottom_inactive">2th</div> 
-      <div class="nav_bottom_inactive">1th</div>  
-  </div>
-</footer>
+<div class="nav-bottom">
+  <button class="create-btn">
+    <span>
+      < </span>
+  </button>
+  <ul class="nav-bottom-real">
+    <li class="nav-bottom-active">
+      <div class="selected-mark"></div>
+      <span>10th</span>
+    </li>
+    <li class="nav-bottom-inactive"><span>9th</span></li>
+    <li class="nav-bottom-inactive"><span>8th</span></li>
+    <li class="nav-bottom-inactive"><span>7th</span></li>
+    <li class="nav-bottom-inactive"><span>6th</span></li>
+    <li class="nav-bottom-inactive"><span>5th</span></li>
+    <li class="nav-bottom-inactive"><span>4th</span></li>
+    <li class="nav-bottom-inactive"><span>3rd</span></li>
+    <li class="nav-bottom-inactive"><span>2nd</span></li>
+    <li class="nav-bottom-inactive"><span>1st</span></li>
+  </ul>
 
 {% endblock %}
