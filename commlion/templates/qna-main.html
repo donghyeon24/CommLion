@@ -9,6 +9,7 @@
 <!-- QNA -->
 <h1>Django 폼을 활용한 CRUD</h1>
 <div class="container">
+  <a href="{% url 'qnaDetail' %}">
   <div class="qnacontent">
     <!--질문영역-->
     <div class="main">
@@ -27,7 +28,7 @@
         <button type="button" onclick="location.href=''" class="hashtag">#migrate</button>
         <button type="button" onclick="location.href=''" class="hashtag">#kakao</button>
       </div>
-
+    
       <!--내용-->
       <div class="contents">
         빨-빨-빨간 맛, 궁금해 honey
@@ -53,11 +54,12 @@
         <div class="solve">해결 중</div>
       </div>
     </div>
+  </a>
     <div class="main"></div>
 
   </div>
 
-  <button class="qnabtn">질문하기</button>
+  <button class="qnabtn" onclick="location.href='{% url 'qnaWrite' %}'">질문하기</button>
 
   
   <footer class="nav_bottom">
