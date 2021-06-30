@@ -15,7 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from commlion import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index, name='index'),
+    path('login/', views.login, name='login'),
+    path('notice/', views.notice, name='notice'),
+    path('session/', views.session, name='session'),
+    path('qna/main/', views.qnaMain, name='qnaMain'),
+    path('qna/detail/', views.qnaDetail, name='qnaDetail'),
+    path('qna/write/', views.qnaWrite, name='qnaWrite'),
+    path('project/main/', views.projectMain, name='projectMain'),
+    path('project/detail/', views.projectDetail, name='projectDetail'),
+    path('project/write/', views.projectWrite, name='projectWrite'),
 ]

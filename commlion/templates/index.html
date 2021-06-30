@@ -1,0 +1,17 @@
+{% extends 'index-nav.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="intro">
+  <img src="{% static 'img/index.jpg' %}" alt="!Notfounded">
+  <div>
+    <h1>CommLion</h1>
+    <p>오직 멋쟁이사자처럼을 위한 학교별 커뮤니티 공지사항, QnA ... 이제 모든 것들을 CommLion 한 곳에서 경험해보세요.</p>
+    <button type="button" onclick="location.href=''">시작하기</button>
+  </div>
+</div>
+{% endblock %}

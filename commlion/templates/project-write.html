@@ -1,0 +1,28 @@
+{% extends 'write-nav.html' %}
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/project-write.css' %}">
+{% endblock %}
+
+{% block content %}
+<form action="POST">
+  <input class="upload" type="file" name="img">
+  <p class="write-input">서비스 이름</p>
+  <input type="text">
+  <p class="write-input">서비스 소개</p>
+  <input type="text">
+  <p class="write-input">함께한 사람들</p>
+  <input type="text">
+  <p class="write-input">개발 기간</p>
+  <input type="text">
+  <p class="write-input">개발 스택</p>
+  <input type="text">
+  <p class="write-input">참고 자료</p>
+  <input type="text"><br>
+  <div class="state-btn">
+    <button class="state-btn-developing" value="developing">개발중</button>
+    <button class="state-btn-developed" value="done">개발완료</button>
+  </div>
+</form>
+{% endblock %}
