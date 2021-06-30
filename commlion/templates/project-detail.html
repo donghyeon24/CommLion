@@ -6,21 +6,64 @@
 {% endblock %}
 
 {% block content %}
-<div class="project-detail">
-  <h1>(서비스이름)</h1>
-  <p class="state">(개발현황)</p>
-  <img src="" alt="">
-  <div class="project-detail">
-    <h3>🏀 서비스 소개</h3>
-    <p>(서비스소개)</p>
-    <h3>😀 함께한 사람들</h3>
-    <p>(개발인원)</p>
-    <h3>📆 개발 기간</h3>
-    <p>(개발 날짜)</p>
-    <h3>💻 개발 스택</h3>
-    <p>(개발 스택)</p>
-    <h3>📗 참고 자료</h3>
-    <p>(참고 자료)</p>
+<div class="container">
+  <div class="top">
+    <div class="title">CommLion</div>
+    <div class="status_dev">개발 중</div>
   </div>
+
+  <!--프로젝트 이미지-->
+  <img src="https://pbs.twimg.com/media/DcxH7rpVAAMevuE.jpg" alt="">
+
+    <!--서비스 소개-->
+    <div class="bottom">
+      <div class="service">
+        <ul>
+          <li>🏀 서비스 소개</li>
+          <li class="name">CommLion</li>
+        </ul>
+      </div>
+    </div>
+
+    <!--함께한 사람들-->
+    <div class="bottom">
+      <div class="service">
+        <ul>
+          <li>😀 함께한 사람들</li>
+          <li class="name">8기 김동현, 8기 박지은, 9기 성규동, 9기 양소열</li>
+        </ul>
+      </div>
+    </div>
+
+    <!--개발 기간-->
+    <div class="bottom">
+      <div class="service">
+        <ul>
+          <li>📆 개발 기간</li>
+          <li class="name">21.06.29 ~</li>
+        </ul>
+      </div>
+    </div>
+
+      <!--개발 스택-->
+      <div class="bottom">
+        <div class="service">
+          <ul>
+            <li>💻 개발 스택</li>
+            <li class="name">HTML / CSS /JS /Python /Django</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!--참고 자료-->
+      <div class="bottom">
+        <div class="service">
+          <ul>
+            <li>📗 참고 자료</li>
+            <li class="name">Notion : https://www.notion.so/map-mo-3ae5a4750c70464cb00ee2719c9adae5</li>
+            <li class="name">Figma : https://www.figma.com/file/xw27vs6gO3Z3RplGw7XtQe/map-mo?node-id=95%3A37</li>
+          </ul>
+        </div>
+      </div>
 </div>
 {% endblock %}

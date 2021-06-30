@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@700&display=swap");
 
 body {
   margin: 0;
@@ -9,26 +9,63 @@ a {
   color: black;
 }
 
-.project-detail > .state {
-  text-align: right;
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.container .top {
+  height: 186px;
+  width: 960px;
+  display: flex;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+
+.container .top .title {
+  height: 186px;
+  width: 800px;
+  font-family: "Roboto";
   font-weight: bold;
+  font-size: 96px;
+}
+
+.container .top .status_dev {
+  font-family: "Roboto";
   font-size: 32px;
-  color: #ff0000;
+  font-weight: bold;
+  color: blue;
+  align-self: center;
   /* 추후에 js로 개발 현황에 따라 색상 변경할 것*/
 }
 
-.project-detail > img {
+.container img {
   width: 960px;
   height: 960px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
-.project-detail > h3 {
+.container .bottom .service {
   font-family: Roboto;
   font-weight: bold;
   font-size: 48px;
+  margin-left: 60px;
+  display: flex;
+  flex-direction: column;
 }
 
-.project-detail > p {
+.container .bottom .service .name {
   font-family: Roboto;
   font-size: 36px;
+  margin-left: 10px;
+  list-style: none;
+  margin-top: 20px;
+  font-weight: lighter;
+  width: 900px;
+  margin-right: 60px;
+  word-break: break-all;
 }
