@@ -32,7 +32,7 @@
         </a>
       </li>
       <li class="{% if request.resolver_match.url_name == 'qnaMain' %}selected{% else %}unselected{% endif %}">
-        <a href="{% url 'qnaMain' %}">
+        <a href="{% url 'qnaMain' 10 %}">
           <span>QnA</span>
           <div class="{% if request.resolver_match.url_name == 'qnaMain' %}selected{% else %}unselected{% endif %}"></div>
         </a>

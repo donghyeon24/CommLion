@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.utils import timezone
 from datetime import datetime, timezone
 from datetime import time
-from .models import NoticePost, SessionPost, Student, ProjectPost, Uni
+from .models import NoticePost, QnaPost, SessionPost, Student, ProjectPost, Uni
 
 # Create your views here.
 
@@ -29,15 +29,21 @@ def sessionMain(request,session_num):
         return redirect('sessionWrite',session_num)
 
 
-def qnaMain(request):
-    return render(request, 'qna-main.html')
+def qnaMain(request,session_num):
+    exist_session = SessionPost.objects.filter(session_num=session_num)
+    if exist_session.exists():
+        session=SessionPost.objects.get(session_num=session_num)
+        qnas=QnaPost.objects.filter(session_id=session)
+        return render(request, 'qnaMain.html',{'qnas':qnas},{'session':session})
+    else:
+        return render(request, 'qna-main.html')
 
 
-def qnaDetail(request):
+def qnaDetail(request,session_num):
     return render(request, 'qna-detail.html')
 
 
-def qnaWrite(request):
+def qnaWrite(request,session_num):
     if request.method == 'POST':
         qnaPost = QnaPost()
         qnaPost.session_title = request.POST['title']

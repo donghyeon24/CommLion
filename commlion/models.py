@@ -46,7 +46,7 @@ class QnaPost(models.Model):
     content = models.TextField()
     hashtag1 = models.CharField(max_length = 15)
     hashtag2 =  models.CharField(max_length = 15)
-    file = models.FileField(upload_to="QnaImage/", null=True, blank=True)
+    file = models.ImageField(upload_to="QnaImage/", null=True, blank=True)
     pub_date = models.DateTimeField(auto_now_add=True)
     state = IntegerField(default=0)
 
@@ -64,7 +64,7 @@ class Comment(models.Model):
     def __str__ (self): return self.answer[:20]
 
 class ProjectPost(models.Model):
-    file = models.FileField(upload_to="ProjectImage/", null=True, blank=True)
+    file = models.ImageField(upload_to="ProjectImage/", null=True, blank=True)
     title = models.CharField(max_length = 30)
     introduction = models.TextField()
     developer = models.TextField()
