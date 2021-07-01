@@ -31,7 +31,7 @@
     {% if request.resolver_match.url_name == 'projectWrite' %}{% url 'projectMain' %}{% endif %}
     {% if request.resolver_match.url_name == 'noticeWrite' %}{% url 'notice' %}{% endif %}
     {% if request.resolver_match.url_name == 'sessionWrite' %}{% url 'session' %}{% endif %}">
-    <button class="right" form="example" >
+    <button type="submit" class="right" form="done">
       완료
     </button></a>
   </nav>

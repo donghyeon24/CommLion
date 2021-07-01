@@ -3,18 +3,25 @@
 
 {% block link %}
 <link rel="stylesheet" href="{% static 'css/notice.css' %}">
+
 {% endblock %}
 
 {% block content %}
 <div class="container">
-  <!-- {% for notice in notices %}
-  {% endfor %} -->
+
   <div class="notice-posts">
+    
+    {% for notice in notices %}
+      
+    
+      
     <div class="notice-post">
-      <p class='title'>😀 오늘 저녁 7시 30분에 세션 있습니다!</p>
-      <pre class='content'>· 아이디어 발표 준비해서 오기</pre>
-      <p class='writer'>경상대 멋사 8기 김가은 · 7분 전</p>
+      <p class='title'>{{notice.title}}</p>
+      <pre class='content'>{{notice.content}}</pre>
+      <p class='writer'>{{notice.student_id.student_generation}} {{notice.student_id.student_name}} {{notice.pub_date}}</p>
     </div>
+    {% endfor %}
+      
     <div class="notice-post">
       <p class='title'>🦁 6월 17일부터 멋사 9기 활동을 다시 시작합니다!!</p>
       <p class='content'>

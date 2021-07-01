@@ -1,21 +1,20 @@
-## DONGHYEON branch
-
 ## 🌍 CommLion이란?
 
-- 작성해주세요
-  <br>
+멋쟁이사자처럼 내부 정보 공유 공간
 
 ## 📌 주요 기능
 
-- **작성해주세요** : 작성해주세요
-  <br>
+1. Notice : 학교별 공지사항
+2. Session : 학교별 세션 자료 제공 / 운영진만 수정 가능 + 운영진만 다른 학교 자료 열람 가능 + 기수별
+3. QnA : 학교별 QnA 진행
+4. Projects : 학교별 프로젝트 구인 및 자료
 
 ## 📆 개발 일정
 
-1. 기획
-2. 디자인
-3. 프론트엔드
-4. 백엔드
+1. 기획 ~
+2. 디자인 ~
+3. 프론트엔드 21.06.29 ~ 07.01
+4. 백엔드 07.01 ~
    <br>
 
 ## 😀 함께한 사람들
@@ -28,5 +27,5 @@
 
 ## 📗 참고 자료
 
-- Notion : https://www.notion.so/map-mo-3ae5a4750c70464cb00ee2719c9adae5
-- Figma : https://www.figma.com/file/xw27vs6gO3Z3RplGw7XtQe/map-mo?node-id=95%3A37
+- Notion : https://www.notion.so/COMMLION-80d4881591e4479dbc5285073fb3d49a
+- Figma : https://www.figma.com/file/va50YVrt9EbwSx8cLSlNkJ/LIKELION_Community-team-library?node-id=0%3A1
