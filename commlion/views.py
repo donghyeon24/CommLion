@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.utils import timezone
+from datetime import datetime, timezone
 from datetime import time
 from .models import NoticePost,SessionPost, Student
 
@@ -15,7 +16,8 @@ def login(request):
 
 
 def notice(request):
-    return render(request, 'notice.html')
+    notices=NoticePost.objects.all()
+    return render(request, 'notice.html',{'notices':notices})
 
 
 def session(request):

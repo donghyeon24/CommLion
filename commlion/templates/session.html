@@ -8,33 +8,38 @@
 {% block content %}
 <div class="container">
   <header class="title">효율적인 프로젝트<br>관리와 유저 기능 구현</header>
-  <img src="https://i.pinimg.com/originals/c3/2b/da/c32bdaaa440eff8be24d5b25b05fb113.jpg">
+  <iframe src="{% static 'img/test.pdf' %}" style="width:960px; height:1800px;"></iframe>
+  <!-- <img src="https://i.pinimg.com/originals/c3/2b/da/c32bdaaa440eff8be24d5b25b05fb113.jpg">
   <img
     src="https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/7upb/image/4r8RrHruiCoLCysl0n0k6i6aeyY.jpg">
   <img src="http://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/081/229/812/81229812_1560925543651_1_600x600.JPG">
   <img src="https://cdn.crowdpic.net/list-thumb/thumb_l_7D4C30C449E4E02ABE76C0E4DAC991AA.jpg">
   <img src="https://d2uh4olaxaj5eq.cloudfront.net/fit-in/0x1080/31847cfa-8869-4d3c-8b51-6735d5f072e3.jpg">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_c2SNehSQ-NwlLeJibVyS2zbooq2UeWRAzA&usqp=CAU">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_c2SNehSQ-NwlLeJibVyS2zbooq2UeWRAzA&usqp=CAU"> -->
   <button class="create-btn" onclick="location.href='{% url 'sessionWrite' %}'">
     <span>+</span>
   </button>
 </div>
 
-<div class="nav-bottom" >
-  <button class="create-btn">
-    <span>+</span>
+<div class="nav-bottom">
+  <button class="pre-btn" onclick="history.back()">
+    <span>
+      < </span>
   </button>
-  <div class="nav-bottom-real">
-    <div class="nav-bottom-active">10th</div>
-    <div class="nav-bottom-inactive">9th</div>
-    <div class="nav-bottom-inactive">8th</div>
-    <div class="nav-bottom-inactive">7th</div>
-    <div class="nav-bottom-inactive">6th</div>
-    <div class="nav-bottom-inactive">5th</div>
-    <div class="nav-bottom-inactive">4th</div>
-    <div class="nav-bottom-inactive">3th</div>
-    <div class="nav-bottom-inactive">2th</div>
-    <div class="nav-bottom-inactive">1th</div>
-  </div>
+  <ul class="nav-bottom-real">
+    <li class="nav-bottom-active">
+      <div class="selected-mark"></div>
+      <span>10th</span>
+    </li>
+    <li class="nav-bottom-inactive"><span>9th</span></li>
+    <li class="nav-bottom-inactive"><span>8th</span></li>
+    <li class="nav-bottom-inactive"><span>7th</span></li>
+    <li class="nav-bottom-inactive"><span>6th</span></li>
+    <li class="nav-bottom-inactive"><span>5th</span></li>
+    <li class="nav-bottom-inactive"><span>4th</span></li>
+    <li class="nav-bottom-inactive"><span>3rd</span></li>
+    <li class="nav-bottom-inactive"><span>2nd</span></li>
+    <li class="nav-bottom-inactive"><span>1st</span></li>
+  </ul>
 </div>
 {% endblock %}
