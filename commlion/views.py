@@ -1,8 +1,8 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.utils import timezone
 from datetime import datetime, timezone
 from datetime import time
-from .models import NoticePost,SessionPost, Student
+from .models import NoticePost, SessionPost, Student, ProjectPost, Uni
 
 # Create your views here.
 
@@ -15,12 +15,12 @@ def login(request):
     return render(request, 'login.html')
 
 
-def notice(request):
-    notices=NoticePost.objects.all()
-    return render(request, 'notice.html',{'notices':notices})
+def noticeMain(request):
+    notices = NoticePost.objects.all()
+    return render(request, 'notice-main.html', {'notices': notices})
 
 
-def session(request,session_num):
+def sessionMain(request,session_num):
     exist_session = SessionPost.objects.filter(session_num=session_num)
     if exist_session.exists():
         session=SessionPost.objects.get(session_num=session_num)
@@ -49,9 +49,6 @@ def projectDetail(request):
     return render(request, 'project-detail.html')
 
 
-def projectWrite(request):
-    return render(request, 'project-write.html')
-
 
 def sessionWrite(request,session_num):
   if request.method == 'POST':
@@ -69,17 +66,35 @@ def sessionWrite(request,session_num):
     return render(request, 'session-write.html')
 
 def noticeWrite(request):
-  if request.method == 'POST':
-    noticePost = NoticePost()
-    noticePost.content = request.POST['content']
-    noticePost.title = request.POST['title']
-    noticePost.pub_date = timezone.datetime.now()
-    noticePost.student_id = Student.objects.get(student_id=0)
-    # 아이디값 변경
-    noticePost.save()
+    if request.method == 'POST':
+        noticePost = NoticePost()
+        noticePost.content = request.POST['content']
+        noticePost.title = request.POST['title']
+        noticePost.pub_date = timezone.datetime.now()
+        noticePost.student_id = Student.objects.get(student_id=0)
+        # 아이디값 변경
+        noticePost.save()
 
-    return redirect('notice')
-  else:
-    return render(request, 'notice-write.html')
+        return redirect('noticeMain')
+    else:
+        return render(request, 'notice-write.html')
 
 
+def projectWrite(request):
+    if request.method == 'POST':
+        projectPost = ProjectPost()
+        projectPost.file = request.POST['img']
+        projectPost.title = request.POST['title']
+        projectPost.introduction = request.POST['introduction']
+        projectPost.developer = request.POST['developer']
+        projectPost.dev_period = request.POST['dev_period']
+        projectPost.dev_stack = request.POST['dev_stack']
+        projectPost.ref = request.POST['ref']
+        projectPost.state = request.POST['state']
+        projectPost.uni_num = Uni.objects.get(uni_num=0)
+        # 아이디값 변경
+        projectPost.save()
+
+        return redirect('projectMain')
+    else:
+        return render(request, 'Project-write.html')

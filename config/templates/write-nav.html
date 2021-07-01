@@ -29,8 +29,13 @@
     <a href="
     {% if request.resolver_match.url_name == 'qnaWrite' %}{% url 'qnaMain' %}{% endif %}
     {% if request.resolver_match.url_name == 'projectWrite' %}{% url 'projectMain' %}{% endif %}
+<<<<<<< HEAD
     {% if request.resolver_match.url_name == 'noticeWrite' %}{% url 'notice' %}{% endif %}
     {% if request.resolver_match.url_name == 'sessionWrite' %}{% url 'session' 10 %}{% endif %}">
+=======
+    {% if request.resolver_match.url_name == 'noticeWrite' %}{% url 'noticeMain' %}{% endif %}
+    {% if request.resolver_match.url_name == 'sessionWrite' %}{% url 'sessionMain' %}{% endif %}">
+>>>>>>> master
     <button type="submit" class="right" form="done">
       완료
     </button></a>
