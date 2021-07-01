@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.utils import timezone
 from datetime import datetime, timezone
 from datetime import time
-from .models import NoticePost, SessionPost, Student
+from .models import NoticePost, SessionPost, Student, ProjectPost, Uni
 
 # Create your views here.
 
@@ -45,10 +45,6 @@ def projectDetail(request):
     return render(request, 'project-detail.html')
 
 
-def projectWrite(request):
-    return render(request, 'project-write.html')
-
-
 def sessionWrite(request):
     if request.method == 'POST':
         sessionPost = SessionPost()
@@ -78,3 +74,23 @@ def noticeWrite(request):
         return redirect('noticeMain')
     else:
         return render(request, 'notice-write.html')
+
+
+def projectWrite(request):
+    if request.method == 'POST':
+        projectPost = ProjectPost()
+        projectPost.file = request.POST['img']
+        projectPost.title = request.POST['title']
+        projectPost.introduction = request.POST['introduction']
+        projectPost.developer = request.POST['developer']
+        projectPost.dev_period = request.POST['dev_period']
+        projectPost.dev_stack = request.POST['dev_stack']
+        projectPost.ref = request.POST['ref']
+        projectPost.state = request.POST['state']
+        projectPost.uni_num = Uni.objects.get(uni_num=0)
+        # 아이디값 변경
+        projectPost.save()
+
+        return redirect('projectMain')
+    else:
+        return render(request, 'Project-write.html')
