@@ -18,16 +18,16 @@
 <body>
   <nav class="navbar">
     <ul class="left">
-      <li class="{% if request.resolver_match.url_name == 'notice' %}selected{% else %}unselected{% endif %}">
-        <a href="{% url 'notice' %}">
+      <li class="{% if request.resolver_match.url_name == 'noticeMain' %}selected{% else %}unselected{% endif %}">
+        <a href="{% url 'noticeMain' %}">
           <span>Notice</span>
-          <div class="{% if request.resolver_match.url_name == 'notice' %}selected{% else %}unselected{% endif %}"></div>
+          <div class="{% if request.resolver_match.url_name == 'noticeMain' %}selected{% else %}unselected{% endif %}"></div>
         </a>
       </li>
-      <li class="{% if request.resolver_match.url_name == 'session' %}selected{% else %}unselected{% endif %}">
-        <a href="{% url 'session' %}">
+      <li class="{% if request.resolver_match.url_name == 'sessionMain' %}selected{% else %}unselected{% endif %}">
+        <a href="{% url 'sessionMain' %}">
           <span>Session</span>
-          <div class="{% if request.resolver_match.url_name == 'session' %}selected{% else %}unselected{% endif %}"></div>
+          <div class="{% if request.resolver_match.url_name == 'sessionMain' %}selected{% else %}unselected{% endif %}"></div>
         </a>
       </li>
       <li class="{% if request.resolver_match.url_name == 'qnaMain' %}selected{% else %}unselected{% endif %}">
