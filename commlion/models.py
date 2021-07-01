@@ -6,6 +6,7 @@ from django.db.models.fields.related import ForeignKey
 class Uni(models.Model):
     uni_num = models.IntegerField(primary_key=True)
     uni_name = models.CharField(max_length = 20)
+    def __str__ (self): return self.uni_name
 
 class Student(models.Model):
     student_id = models.CharField(primary_key=True,max_length = 20)
@@ -16,6 +17,7 @@ class Student(models.Model):
 
     uni_num = ForeignKey("Uni", on_delete=models.CASCADE, db_column="uni_num")
     # related_name은 외부에서의 관계를 정의함
+    def __str__ (self): return self.student_name
 
 class NoticePost(models.Model):
     title = models.CharField(max_length = 30)
@@ -24,6 +26,8 @@ class NoticePost(models.Model):
 
     student_id = ForeignKey("Student", on_delete=models.CASCADE, db_column="student_id")
     # 소속 학교, 기수, 이름 불러올 때 사용
+
+    def __str__ (self): return self.title
 
 class SessionPost(models.Model):
     # 기본키(pk)는 장고 기본 id 사용
@@ -34,6 +38,8 @@ class SessionPost(models.Model):
     session_content = models.TextField()
 
     student_id = ForeignKey("Student", on_delete=models.CASCADE, db_column="student_id")
+    def __str__ (self): return self.session_title
+
 
 class QnaPost(models.Model):
     title = models.CharField(max_length = 30)
@@ -45,6 +51,7 @@ class QnaPost(models.Model):
     state = IntegerField(default=0)
 
     session_id = ForeignKey("SessionPost", on_delete=models.CASCADE, db_column="session_id")
+    def __str__ (self): return self.title
 
 class Comment(models.Model):
     answer = models.TextField()
@@ -54,6 +61,7 @@ class Comment(models.Model):
 
     qna_id = ForeignKey("QnaPost", on_delete=models.CASCADE, db_column="qna_id")
     student_id = ForeignKey("Student", on_delete=models.CASCADE, db_column="student_id")
+    def __str__ (self): return self.answer[:20]
 
 class ProjectPost(models.Model):
     file = models.FileField(upload_to="ProjectImage/", null=True, blank=True)
@@ -66,3 +74,5 @@ class ProjectPost(models.Model):
     state = IntegerField(default=0)
 
     uni_num = ForeignKey("Uni", on_delete=models.CASCADE, db_column="uni_num")
+
+    def __str__ (self): return (self.title + self.introduction[:20])

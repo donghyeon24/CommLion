@@ -20,9 +20,13 @@ def notice(request):
     return render(request, 'notice.html',{'notices':notices})
 
 
-def session(request):
-    session=SessionPost.objects.get(id=1)
-    return render(request, 'session.html',{'session':session})
+def session(request,session_num):
+    exist_session = SessionPost.objects.filter(session_num=session_num)
+    if exist_session.exists():
+        session=SessionPost.objects.get(session_num=session_num)
+        return render(request, 'session.html',{'session':session})
+    else:
+        return redirect('sessionWrite',session_num)
 
 
 def qnaMain(request):
@@ -49,11 +53,11 @@ def projectWrite(request):
     return render(request, 'project-write.html')
 
 
-def sessionWrite(request):
+def sessionWrite(request,session_num):
   if request.method == 'POST':
     sessionPost = SessionPost()
-    sessionPost.session_num = 0
-    sessionPost.session_year = 0
+    sessionPost.session_num = session_num
+    sessionPost.session_year = 2021
     sessionPost.session_content = request.POST['content']
     sessionPost.session_title = request.POST['title']
     sessionPost.session_file = request.FILES['img']

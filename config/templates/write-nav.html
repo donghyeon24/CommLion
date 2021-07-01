@@ -30,7 +30,7 @@
     {% if request.resolver_match.url_name == 'qnaWrite' %}{% url 'qnaMain' %}{% endif %}
     {% if request.resolver_match.url_name == 'projectWrite' %}{% url 'projectMain' %}{% endif %}
     {% if request.resolver_match.url_name == 'noticeWrite' %}{% url 'notice' %}{% endif %}
-    {% if request.resolver_match.url_name == 'sessionWrite' %}{% url 'session' %}{% endif %}">
+    {% if request.resolver_match.url_name == 'sessionWrite' %}{% url 'session' 10 %}{% endif %}">
     <button type="submit" class="right" form="done">
       완료
     </button></a>
