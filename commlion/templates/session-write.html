@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-<form method="POST" id="done">
+<form method="POST" id="done" enctype="multipart/form-data">
   {% csrf_token %}
   <div class = "divupload">
     <label for="file_name" class="file">

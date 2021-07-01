@@ -21,7 +21,8 @@ def notice(request):
 
 
 def session(request):
-    return render(request, 'session.html')
+    session=SessionPost.objects.get(id=1)
+    return render(request, 'session.html',{'session':session})
 
 
 def qnaMain(request):
