@@ -8,7 +8,7 @@
 {% block content %}
 <div class="container">
   <header class="title">효율적인 프로젝트<br>관리와 유저 기능 구현</header>
-  <iframe src="{% static 'img/test.pdf' %}" style="width:960px; height:1800px;"></iframe>
+  <iframe src="{% static 'img/test.pdf' %}" style="width:960px; height:1800px; border: none; background-color: white;"></iframe>
   <!-- <img src="https://i.pinimg.com/originals/c3/2b/da/c32bdaaa440eff8be24d5b25b05fb113.jpg">
   <img
     src="https://t1.daumcdn.net/thumb/R720x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/7upb/image/4r8RrHruiCoLCysl0n0k6i6aeyY.jpg">
@@ -22,7 +22,7 @@
 </div>
 
 <div class="nav-bottom">
-  <button class="pre-btn" onclick="history.back()">
+  <button class="pre-btn" onclick="location.href='{% url 'index' %}'">>
     <span>
       < </span>
   </button>

@@ -18,7 +18,7 @@
 <body>
   <nav class="navbar">
     <div class="left">
-      <a href="javascript:window.history.back();"><i class="fas fa-arrow-left"></i></a>
+      <i class="fas fa-arrow-left" onclick="history.back()"></i>
     </div>
     <span class="center">
       {% if request.resolver_match.url_name == 'qnaDetail' %}QnA{% endif %}
