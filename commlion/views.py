@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.utils import timezone
+from datetime import datetime, timezone
 from datetime import time
 from .models import NoticePost,SessionPost, Student
 
@@ -15,11 +16,13 @@ def login(request):
 
 
 def notice(request):
-    return render(request, 'notice.html')
+    notices=NoticePost.objects.all()
+    return render(request, 'notice.html',{'notices':notices})
 
 
 def session(request):
-    return render(request, 'session.html')
+    session=SessionPost.objects.get(id=1)
+    return render(request, 'session.html',{'session':session})
 
 
 def qnaMain(request):
