@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-<form method="POST" enctype="multipart/form-data">
+<form method="POST" enctype="multipart/form-data" id="done">
   {% csrf_token %}
   <div class="divupload">
     <label for="file_name" class="file">
@@ -26,9 +26,7 @@
   <input type="text" class="write_input_last" placeholder="참고 자료" name="ref"><br>
 
   <!--개발 상태 버튼-->
-  <div class="state-btn">
-    <button class="state-btn-developing" value="0" name="state">개발중</button>
-    <button class="state-btn-developed" value="1" name="state">개발완료</button>
-  </div>
+  <input type="radio" class="state-btn-developing" value="개발중" name="state" id="btn_developing"><label for="btn_developing" class="explain_developing">개발중</label>
+  <input type="radio" class="state-btn-developing" value="개발 완료" name="state" id="btn_developed"><label for="btn_developed" class="explain_developed">개발 완료</label>
 </form>
 {% endblock %}
