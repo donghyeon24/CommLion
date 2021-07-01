@@ -14,12 +14,42 @@ def login(request):
     return render(request, 'login.html')
 
 
-def notice(request):
-    return render(request, 'notice.html')
+def noticeMain(request):
+    return render(request, 'notice-main.html')
 
 
-def session(request):
-    return render(request, 'session.html')
+def noticeWrite(request):
+    if request.method == 'POST':
+        noticePost = NoticePost()
+        noticePost.content = request.POST['content']
+        noticePost.title = request.POST['title']
+        noticePost.pub_date = timezone.datetime.now()
+        noticePost.student_id = Student.objects.get(student_id=0)
+        # 아이디값 변경
+        noticePost.save()
+
+        return redirect('notice/main')
+    else:
+        return render(request, 'notice-write.html')
+
+
+def sessionMain(request):
+    return render(request, 'session-main.html')
+
+
+def sessionWrite(request):
+    if request.method == 'POST':
+        sessionPost = SessionPost()
+        sessionPost.session_num = 0
+        sessionPost.session_year = 0
+        sessionPost.session_content = request.POST['content']
+        sessionPost.session_title = request.POST['title']
+        sessionPost.session_file = request.FILES['img']
+        sessionPost.student_id = Student.objects.get(student_id=0)
+        sessionPost.save()
+        return redirect('session/main')
+    else:
+        return render(request, 'session-write.html')
 
 
 def qnaMain(request):
@@ -46,32 +76,4 @@ def projectWrite(request):
     return render(request, 'project-write.html')
 
 
-def sessionWrite(request):
-    if request.method == 'POST':
-        sessionPost = SessionPost()
-        sessionPost.session_num = 0
-        sessionPost.session_year = 0
-        sessionPost.session_content = request.POST['content']
-        sessionPost.session_title = request.POST['title']
-        sessionPost.session_file = request.FILES['img']
-        sessionPost.student_id = Student.objects.get(student_id=0)
-        sessionPost.save()
 
-        return redirect('session')
-    else:
-        return render(request, 'session-write.html')
-
-
-def noticeWrite(request):
-    if request.method == 'POST':
-        noticePost = NoticePost()
-        noticePost.content = request.POST['content']
-        noticePost.title = request.POST['title']
-        noticePost.pub_date = timezone.datetime.now()
-        noticePost.student_id = Student.objects.get(student_id=0)
-        # 아이디값 변경
-        noticePost.save()
-
-        return redirect('notice')
-    else:
-        return render(request, 'notice-write.html')

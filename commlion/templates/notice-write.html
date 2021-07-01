@@ -1,14 +1,14 @@
 {% extends 'write-nav.html' %}
 {% load static %}
 
-<script src="{% static 'js/notice-write.js' %}" ></script>
+<script src="{% static 'js/notice-write.js' %}"></script>
 {% block link %}
 <link rel="stylesheet" href="{% static 'css/notice-write.css' %}">
-<script type="text/javascript" src="{% static 'js/notice-write.js' %}" ></script>
+<script type="text/javascript" src="{% static 'js/notice-write.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-<form method="POST" id="done">
+<form id="done" method="POST">
   {% csrf_token %}
 
   <!--Input태그 입력-->
