@@ -60,7 +60,7 @@ def sessionWrite(request):
         sessionPost.student_id = Student.objects.get(student_id=0)
         sessionPost.save()
 
-        return redirect('session')
+        return redirect('sessionMain')
     else:
         return render(request, 'session-write.html')
 
@@ -75,6 +75,6 @@ def noticeWrite(request):
         # 아이디값 변경
         noticePost.save()
 
-        return redirect('notice')
+        return redirect('noticeMain')
     else:
         return render(request, 'notice-write.html')
