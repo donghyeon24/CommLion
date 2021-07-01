@@ -38,7 +38,21 @@ def qnaDetail(request):
 
 
 def qnaWrite(request):
-    return render(request, 'qna-write.html')
+    if request.method == 'POST':
+        qnaPost = QnaPost()
+        qnaPost.session_title = request.POST['title']
+        qnaPost.session_content = request.POST['content']
+        qnaPost.session_hashtag1 = request.POST['hashtag1']
+        qnaPost.session_hashtag2 = request.POST['hashtag2']
+        qnaPost.session_file = request.FILES['img']
+        qnaPost.pub_date = timezone.datetime.now()
+        qnaPost.state = 0
+        qnaPost.session_id = SessionPost.objects.get(id=0)
+        qnaPost.save()
+
+        return redirect('sessionMain')
+    else:
+        return render(request, 'qna-write.html')
 
 
 def projectMain(request):
