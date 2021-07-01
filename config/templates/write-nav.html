@@ -18,14 +18,22 @@
 <body>
   <nav class="navbar">
     <div class="left">
-      <a href="{% url 'session' %}"><i class="fas fa-arrow-left"></i></a>
+      <a href="javascript:window.history.back();"><i class="fas fa-arrow-left"></i></a>
     </div>
     <span class="center">
-      QnA
+      {% if request.resolver_match.url_name == 'qnaWrite' %}QnA{% endif %}
+      {% if request.resolver_match.url_name == 'projectWrite' %}Project{% endif %}
+      {% if request.resolver_match.url_name == 'noticeWrite' %}Notice{% endif %}
+      {% if request.resolver_match.url_name == 'sessionWrite' %}Session{% endif %}
     </span>
+    <a href="
+    {% if request.resolver_match.url_name == 'qnaWrite' %}{% url 'qnaMain' %}{% endif %}
+    {% if request.resolver_match.url_name == 'projectWrite' %}{% url 'projectMain' %}{% endif %}
+    {% if request.resolver_match.url_name == 'noticeWrite' %}{% url 'notice' %}{% endif %}
+    {% if request.resolver_match.url_name == 'sessionWrite' %}{% url 'session' %}{% endif %}">
     <button type="submit" class="right" form="done">
       완료
-    </button>
+    </button></a>
   </nav>
   {% block content %}
   {% endblock %}

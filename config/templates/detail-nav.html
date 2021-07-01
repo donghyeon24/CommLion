@@ -18,10 +18,11 @@
 <body>
   <nav class="navbar">
     <div class="left">
-      <a href="#"><i class="fas fa-arrow-left"></i></a>
+      <i class="fas fa-arrow-left" onclick="history.back()"></i>
     </div>
     <span class="center">
-      QnA
+      {% if request.resolver_match.url_name == 'qnaDetail' %}QnA{% endif %}
+      {% if request.resolver_match.url_name == 'projectDetail' %}Project{% endif %}
     </span>
     <div class="right">
       <i class="fas fa-external-link-alt"></i>
