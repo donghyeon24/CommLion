@@ -1,21 +1,24 @@
 {% extends 'write-nav.html' %}
 {% load static %}
 
-<script src="{% static 'js/session-write.js' %}"></script>
+<script src="{% static 'js/session-write.js' %}" ></script>
 {% block link %}
 <link rel="stylesheet" href="{% static 'css/session-write.css' %}">
-<script type="text/javascript" src="{% static 'js/session-write.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/session-write.js' %}" ></script>
 {% endblock %}
 
 {% block content %}
-<form id="example" method="POST">
-  <div class="divupload">
+<form method="POST" id="done">
+  {% csrf_token %}
+  <div class = "divupload">
     <label for="file_name" class="file">
-      <i class="fas fa-file-pdf fa-7x"></i>
+      <i class="fas fa-camera fa-7x"></i>
     </label>
   </div>
-  <input class="upload" type="file" name="img" id="file_name" class="upload-hidden">
-  <input type="text" class="write_input" placeholder="세션 제목">
-  <input type="text" class="write_input_last" placeholder="내용"><br>
+
+  <!--Input태그 입력-->
+  <input type="text" class="write_input" name="title" placeholder="세션 제목">
+  <input type="text" class="write_input_last" name="content" placeholder="내용"><br>
+
 </form>
 {% endblock %}
