@@ -25,7 +25,8 @@
         </a>
       </li>
       <li class="{% if request.resolver_match.url_name == 'sessionMain' %}selected{% else %}unselected{% endif %}">
-        <a href="{% url 'sessionMain' %}">
+        <a href="{% url 'sessionMain' 10 %}">
+
           <span>Session</span>
           <div class="{% if request.resolver_match.url_name == 'sessionMain' %}selected{% else %}unselected{% endif %}"></div>
         </a>

@@ -20,9 +20,13 @@ def noticeMain(request):
     return render(request, 'notice-main.html', {'notices': notices})
 
 
-def sessionMain(request):
-    session = SessionPost.objects.get(id=1)
-    return render(request, 'session-main.html', {'session': session})
+def sessionMain(request,session_num):
+    exist_session = SessionPost.objects.filter(session_num=session_num)
+    if exist_session.exists():
+        session=SessionPost.objects.get(session_num=session_num)
+        return render(request, 'session.html',{'session':session})
+    else:
+        return redirect('sessionWrite',session_num)
 
 
 def qnaMain(request):
@@ -45,21 +49,21 @@ def projectDetail(request):
     return render(request, 'project-detail.html')
 
 
-def sessionWrite(request):
-    if request.method == 'POST':
-        sessionPost = SessionPost()
-        sessionPost.session_num = 0
-        sessionPost.session_year = 0
-        sessionPost.session_content = request.POST['content']
-        sessionPost.session_title = request.POST['title']
-        sessionPost.session_file = request.FILES['img']
-        sessionPost.student_id = Student.objects.get(student_id=0)
-        sessionPost.save()
 
-        return redirect('sessionMain')
-    else:
-        return render(request, 'session-write.html')
+def sessionWrite(request,session_num):
+  if request.method == 'POST':
+    sessionPost = SessionPost()
+    sessionPost.session_num = session_num
+    sessionPost.session_year = 2021
+    sessionPost.session_content = request.POST['content']
+    sessionPost.session_title = request.POST['title']
+    sessionPost.session_file = request.FILES['img']
+    sessionPost.student_id = Student.objects.get(student_id=0)
+    sessionPost.save()
 
+    return redirect('session')
+  else:
+    return render(request, 'session-write.html')
 
 def noticeWrite(request):
     if request.method == 'POST':
