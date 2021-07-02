@@ -6,90 +6,107 @@
 {% endblock %}
 
 {% block content %}
-
 {% if qna %}
-
 <div class="container">
-  <!--질문 이미지-->
-  <img src="{{ qna.file.url }}"
-    alt="!Notfounded">
+  <img src="{{ qna.file.url }}" alt="!Notfounded">
 
-  <!--질문자와 질문 내용-->
-  <div class='writer'>죠르디, 2일전</div>
-  <div class="question">{{ qna.title }}</div>
-
-  <!--해시태그-->
-  <div class="hashtag2">
-    <button type="button" onclick="location.href=''" class="hashtag">#{{ qna.hashtag1 }}</button>
-    <button type="button" onclick="location.href=''" class="hashtag">#{{ qna.hashtag2 }}</button>
+  <div class="question">
+    <div class='writer-and-date'>죠르디 · {{qna.pub_date}}</div>
+    <div class="question__title">{{qna.title}}</div>
+    <div class="hashtags">
+      <button class="hashtag">#{{ qna.hashtag1 }}</button>
+      <button class="hashtag">#{{ qna.hashtag2 }}</button>
+    </div>
+    <div class="question__body">
+      {{qna.content}}
+    </div>
   </div>
 
-  <!--내용-->
-  <div class="contents">
-    {{ qna.content }}
-  </div>
-
-  <!--답변-->
   <div class="answer">
-    <div><i class="far fa-comment-dots" fa-10x></i> 답변 7</div>
+    <i class="far fa-comment-dots" fa-10x></i>
+    <span class="answer__num">답변 7</span>
   </div>
 
-  <!--댓글 기능-->
-  <div class="comments">
-    <div class="comment">
+  <ul class="comments">
+    <li class="comment">
       <div class="recommend">
-        <i class="fas fa-chevron-up"></i>
-        7
-        <i class="fas fa-chevron-down"></i>
+        <i class="fas fa-caret-up"></i>
+        <span class="recommend-num selected">5</span>
+        <i class="fas fa-caret-down"></i>
       </div>
-      <div class="comment-writer">
-        지은누나
-        <div class="comment-contents">
-          울려댔어 사이렌
-          텅 빈 길거린엔
-          도망치다 흘린 칼자루와 피가 흥건해
-          우리 그때 어릴땐
-          뭘 몰랐었지 man
-          그냥 힘쎈 형이 제일로 멋졌었지 그땐
-          그래 우린 살아나왔어 지옥
-          이제 어딜가든 다 비옥
-          수도 없이 맛본 치욕
-          어릴때부터 입에 붙은 쌍욕
-        </div>
+
+      <div class="comment__content">
+        <span class="comment__writer-and-date selected">동현이형</span>
+        <p class="comment__body">
+          Don't worry 'bout me. 오지랖 떨지 말고 신경 꺼. 온 세상이 날 등져도 I don't give a fuck. God is watchin' over me, 나 죽을 일 없어. 내
+          걱정은 세상에서 제일 쓸데없는 짓. 부정적인 shit, man I ain't got time. 썸머소닉 to 코첼라, 글라스톤베리가 다음. 일상이 축제니까 감사하기도 바빠. Middle finger
+          to the Devil, stop fuckin' up my vibe!
+        </p>
         <div class="recomment">답글쓰기</div>
       </div>
-    </div>
+    </li>
 
-    <div class="comment">
+    <li class="comment">
       <div class="recommend">
-        <i class="fas fa-chevron-up"></i>
-        5
-        <i class="fas fa-chevron-down"></i>
+        <i class="fas fa-caret-up"></i>
+        <span class="recommend-num">5</span>
+        <i class="fas fa-caret-down"></i>
       </div>
-      <div class="comment-writer">
-        동현이형
-        <div class="comment-contents">
-          Don't worry 'bout me.
-          오지랖 떨지 말고 신경 꺼.
-          온 세상이 날 등져도
-          I don't give a fuck.
-          God is watchin' over me,
-          나 죽을 일 없어.
-          내 걱정은 세상에서 제일 쓸데없는 짓.
-          부정적인 shit, man I ain't got time.
-          썸머소닉 to 코첼라, 글라스톤베리가 다음.
-          일상이 축제니까 감사하기도 바빠.
-          Middle finger to the Devil, stop fuckin' up my vibe!
-        </div>
+
+      <div class="comment__content">
+        <span class="comment__writer-and-date">동현이형</span>
+        <p class="comment__body">
+          Don't worry 'bout me. 오지랖 떨지 말고 신경 꺼. 온 세상이 날 등져도 I don't give a fuck. God is watchin' over me, 나 죽을 일 없어. 내
+          걱정은 세상에서 제일 쓸데없는 짓. 부정적인 shit, man I ain't got time. 썸머소닉 to 코첼라, 글라스톤베리가 다음. 일상이 축제니까 감사하기도 바빠. Middle finger
+          to the Devil, stop fuckin' up my vibe!
+        </p>
         <div class="recomment">답글쓰기</div>
       </div>
-    </div>
-  </div>
+    </li>
 
-  <div class="writing">
-    <i class="far fa-image fa-5x"></i>
-    <input type="text" class="input_content" placeholder="답변을 입력해주세요:)">
-  </div>
+    <li class="comment">
+      <div class="recommend">
+        <i class="fas fa-caret-up"></i>
+        <span class="recommend-num">5</span>
+        <i class="fas fa-caret-down"></i>
+      </div>
+
+      <div class="comment__content">
+        <span class="comment__writer-and-date">동현이형</span>
+        <p class="comment__body">
+          Don't worry 'bout me. 오지랖 떨지 말고 신경 꺼. 온 세상이 날 등져도 I don't give a fuck. God is watchin' over me, 나 죽을 일 없어. 내
+          걱정은 세상에서 제일 쓸데없는 짓. 부정적인 shit, man I ain't got time. 썸머소닉 to 코첼라, 글라스톤베리가 다음. 일상이 축제니까 감사하기도 바빠. Middle finger
+          to the Devil, stop fuckin' up my vibe!
+        </p>
+        <div class="recomment">답글쓰기</div>
+      </div>
+    </li>
+
+    <li class="comment">
+      <div class="recommend">
+        <i class="fas fa-caret-up"></i>
+        <span class="recommend-num">5</span>
+        <i class="fas fa-caret-down"></i>
+      </div>
+
+      <div class="comment__content">
+        <span class="comment__writer-and-date">동현이형</span>
+        <p class="comment__body">
+          Don't worry 'bout me. 오지랖 떨지 말고 신경 꺼. 온 세상이 날 등져도 I don't give a fuck. God is watchin' over me, 나 죽을 일 없어. 내
+          걱정은 세상에서 제일 쓸데없는 짓. 부정적인 shit, man I ain't got time. 썸머소닉 to 코첼라, 글라스톤베리가 다음. 일상이 축제니까 감사하기도 바빠. Middle finger
+          to the Devil, stop fuckin' up my vibe!
+        </p>
+        <div class="recomment">답글쓰기</div>
+      </div>
+    </li>
+  </ul>
+
+  <form class="writing">
+    <input type="text" placeholder="답변을 입력해주세요:)">
+    <button type="submit">
+      <i class="fas fa-arrow-circle-up"></i>
+    </button>
+  </form>
 </div>
 {% endif %}
 {% endblock %}
