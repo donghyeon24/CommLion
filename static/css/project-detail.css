@@ -37,9 +37,16 @@ a {
   font-family: "Roboto";
   font-size: 32px;
   font-weight: bold;
+  color: red;
+  align-self: center;
+}
+
+.container .top .status_compl {
+  font-family: "Roboto";
+  font-size: 32px;
+  font-weight: bold;
   color: blue;
   align-self: center;
-  /* 추후에 js로 개발 현황에 따라 색상 변경할 것*/
 }
 
 .container img {
