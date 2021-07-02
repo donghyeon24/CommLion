@@ -17,8 +17,8 @@
     
   
   {% if qnas %}
-  {% for qna in qnas %}
   <ul class="qna-container">
+    {% for qna in qnas %}
     
     <li class="question" onclick="location.href='{% url 'qnaDetail' qna.id %}'">
       <img src="{{ qna.file.url }}" alt="!Notfounded">
@@ -41,9 +41,9 @@
         </div>
       </div>
     </li>
+    {% endfor %}
   
   </ul>
-  {% endfor %}
       
   {% endif %}
 
