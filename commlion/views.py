@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
-from .models import NoticePost, QnaPost, SessionPost, Student, ProjectPost, Uni
+from .models import NoticePost, QnaPost, SessionPost, Student, ProjectPost, Uni, Comment
 
 # Create your views here.
 
@@ -41,7 +41,7 @@ def qnaMain(request, session_num):
     if exist_session.exists():
         session = SessionPost.objects.get(session_num=session_num)
         qnas = QnaPost.objects.filter(session_id=session)
-        return render(request, 'qna-main.html', {'qnas': qnas, 'session':session})
+        return render(request, 'qna-main.html', {'qnas': qnas, 'session': session})
     else:
         return redirect('qnaWrite', session_num)
 
@@ -50,10 +50,11 @@ def qnaDetail(request, qna_id):
     exist_qna = QnaPost.objects.filter(id=qna_id)
     if exist_qna.exists():
         qna = QnaPost.objects.get(id=qna_id)
-        return render(request, 'qna-detail.html',{'qna':qna})
+        comments = Comment.objects.filter(qna_id=qna_id)
+        return render(request, 'qna-detail.html', {'qna': qna, 'comments': comments})
     else:
         return redirect('qnaMain', 10)
-    
+
 
 def qnaWrite(request, session_num):
     if request.method == 'POST':
@@ -73,14 +74,15 @@ def qnaWrite(request, session_num):
 
 
 def projectMain(request):
+
     projects = ProjectPost.objects.all().order_by('-pub_date')
     return render(request, 'project-main.html',{'projects':projects})
 
 
 
-def projectDetail(request,project_id):
+def projectDetail(request, project_id):
     project = ProjectPost.objects.get(id=project_id)
-    return render(request, 'project-detail.html',{'project':project})
+    return render(request, 'project-detail.html', {'project': project})
 
 
 def sessionWrite(request, session_num):
@@ -93,7 +95,6 @@ def sessionWrite(request, session_num):
         sessionPost.session_file = request.FILES['img']
         sessionPost.student_id = Student.objects.get(student_id=0)
         sessionPost.save()
-
 
         return redirect('sessionMain', session_num)
     else:
@@ -135,3 +136,17 @@ def projectWrite(request):
         return redirect('projectMain')
     else:
         return render(request, 'Project-write.html')
+
+
+def commentWrite(request):
+    if request.method == 'POST':
+        comment = Comment()
+        comment.answer = request.POST['answer']
+        comment.qna_id = QnaPost.objects.get(pk=request.POST['id'])
+        comment.student_id = Student.objects.get(student_id=0)
+        comment.like_num = "0"
+        comment.save()
+
+        return redirect('/qna/detail/' + "1")
+    else:
+        return render(request, 'qna-detail.html')

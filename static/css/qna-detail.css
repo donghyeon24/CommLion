@@ -15,7 +15,7 @@ body {
 
 .container {
   width: 100vw;
-  height: 100vh;
+  height: 85vh;
 }
 
 img {
@@ -123,7 +123,6 @@ img {
 
 .comment-contents {
   width: 870px;
-  height: 148px;
   margin-top: 10px;
   font-family: roboto;
   font-weight: lighter;
@@ -140,23 +139,38 @@ img {
 .writing {
   border-top: 2px solid #e5e5e5;
   border-bottom: 2px solid #e5e5e5;
-  top: 99vh;
-  height: 150px;
+  position: fixed;
+  height: 140px;
   display: flex;
   flex-direction: row;
   padding-left: 52px;
   align-items: center;
   color: #767676;
+  margin-bottom: 0px;
 }
 
 .input_content {
   text-align: center;
-  width: 870px;
+  width: 900px;
   height: 96px;
   background-color: #e5e5e5;
   border-radius: 50px;
-  margin-left: 38px;
+  margin-left: -15px;
   border: none;
   color: #767676;
   font-size: 40px;
+  top: 90px;
+}
+
+.submit_btn {
+  height: 96px;
+  width: 96px;
+  border: none;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  color: #fe931b;
+  background-color: white;
+  margin-bottom: 20px;
+  margin-left: 5px;
 }

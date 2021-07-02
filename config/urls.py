@@ -30,16 +30,22 @@ urlpatterns = [
     path('notice/main/', views.noticeMain, name='noticeMain'),
     path('notice/write/', views.noticeWrite, name='noticeWrite'),
 
-    path('session/main/<int:session_num>/', views.sessionMain, name='sessionMain'),
-    path('session/write/<int:session_num>/', views.sessionWrite, name='sessionWrite'),
+    path('session/main/<int:session_num>/',
+         views.sessionMain, name='sessionMain'),
+    path('session/write/<int:session_num>/',
+         views.sessionWrite, name='sessionWrite'),
 
     path('qna/main/<int:session_num>/', views.qnaMain, name='qnaMain'),
     path('qna/detail/<int:qna_id>/', views.qnaDetail, name='qnaDetail'),
     path('qna/write/<int:session_num>/', views.qnaWrite, name='qnaWrite'),
 
     path('project/main/', views.projectMain, name='projectMain'),
-    path('project/detail/<int:project_id>/', views.projectDetail, name='projectDetail'),
+    path('project/detail/<int:project_id>/',
+         views.projectDetail, name='projectDetail'),
     path('project/write/', views.projectWrite, name='projectWrite'),
+
+    path('commentWrite',
+         views.commentWrite, name="commentWrite")
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
