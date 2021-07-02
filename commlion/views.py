@@ -34,7 +34,7 @@ def qnaMain(request, session_num):
     if exist_session.exists():
         session = SessionPost.objects.get(session_num=session_num)
         qnas = QnaPost.objects.filter(session_id=session)
-        return render(request, 'qna-main.html', {'qnas': qnas}, {'session': session})
+        return render(request, 'qna-main.html', {'qnas': qnas, 'session':session})
     else:
         return redirect('qnaWrite', session_num)
 
@@ -43,11 +43,10 @@ def qnaDetail(request, qna_id):
     exist_qna = QnaPost.objects.filter(id=qna_id)
     if exist_qna.exists():
         qna = QnaPost.objects.get(id=qna_id)
-        return render(request, 'qna-detail.html', {'qna': qna})
-
+        return render(request, 'qna-detail.html',{'qna':qna})
     else:
         return redirect('qnaMain', 10)
-
+    
 
 def qnaWrite(request, session_num):
     if request.method == 'POST':
