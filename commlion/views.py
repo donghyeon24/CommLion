@@ -24,7 +24,7 @@ def sessionMain(request, session_num):
     exist_session = SessionPost.objects.filter(session_num=session_num)
     if exist_session.exists():
         session = SessionPost.objects.get(session_num=session_num)
-        return render(request, 'session.html', {'session': session})
+        return render(request, 'session-main.html', {'session': session})
     else:
         return redirect('sessionWrite', session_num)
 
@@ -34,29 +34,38 @@ def qnaMain(request, session_num):
     if exist_session.exists():
         session = SessionPost.objects.get(session_num=session_num)
         qnas = QnaPost.objects.filter(session_id=session)
-        return render(request, 'qnaMain.html', {'qnas': qnas}, {'session': session})
+        return render(request, 'qna-main.html', {'qnas': qnas}, {'session':session})
     else:
-        return render(request, 'qna-main.html')
+        return redirect('qnaWrite', session_num)
+
+def qnaDetail(request, qna_id):
+    exist_qna = QnaPost.objects.filter(id=qna_id)
+    if exist_qna.exists():
+        qna = QnaPost.objects.get(id=qna_id)
+        return render(request, 'qna-detaile.html',{'qna':qna})
+
+    else:
+        return redirect('qnaMain',10)
+    
 
 
-def qnaDetail(request, session_num):
     return render(request, 'qna-detail.html')
 
 
 def qnaWrite(request, session_num):
     if request.method == 'POST':
         qnaPost = QnaPost()
-        qnaPost.session_title = request.POST['title']
-        qnaPost.session_content = request.POST['content']
-        qnaPost.session_hashtag1 = request.POST['hashtag1']
-        qnaPost.session_hashtag2 = request.POST['hashtag2']
-        qnaPost.session_file = request.FILES['img']
+        qnaPost.title = request.POST['title']
+        qnaPost.content = request.POST['content']
+        qnaPost.hashtag1 = request.POST['hashtag1']
+        qnaPost.hashtag2 = request.POST['hashtag2']
+        qnaPost.file = request.FILES['img']
         qnaPost.pub_date = timezone.datetime.now()
         qnaPost.state = 0
-        qnaPost.session_id = SessionPost.objects.get(id=0)
+        qnaPost.session_id = SessionPost.objects.get(session_num=session_num)
         qnaPost.save()
 
-        return redirect('sessionMain')
+        return redirect('qnaMain',session_num)
     else:
         return render(request, 'qna-write.html')
 
