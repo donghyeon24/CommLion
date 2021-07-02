@@ -202,6 +202,10 @@ a {
   color: black;
 }
 
+.nav-bottom .nav-bottom-real .nav-bottom-active10 span {
+  color: black;
+}
+
 .nav-bottom .nav-bottom-real .nav-bottom-active10 .selected-mark {
   position: relative;
   left: 48px;
