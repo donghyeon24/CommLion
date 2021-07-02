@@ -61,17 +61,20 @@ def qnaWrite(request, session_num):
         qnaPost.session_id = SessionPost.objects.get(session_num=session_num)
         qnaPost.save()
 
-        return redirect('qnaMain',session_num)
+        return redirect('qnaMain', session_num)
     else:
         return render(request, 'qna-write.html')
 
 
 def projectMain(request):
-    return render(request, 'project-main.html')
+    projects = ProjectPost.objects.all()
+    return render(request, 'project-main.html',{'projects':projects})
 
 
-def projectDetail(request):
-    return render(request, 'project-detail.html')
+
+def projectDetail(request,project_id):
+    project = ProjectPost.objects.get(id=project_id)
+    return render(request, 'project-detail.html',{'project':project})
 
 
 def sessionWrite(request, session_num):
@@ -108,8 +111,8 @@ def noticeWrite(request):
 def projectWrite(request):
     if request.method == 'POST':
         projectPost = ProjectPost()
-        if request.FILES.get('img') is not None:
-            projectPost.file = request.POST['img']
+        # if request.FILES.get('img') is not None:
+        projectPost.file = request.FILES['img']
         projectPost.title = request.POST['title']
         projectPost.introduction = request.POST['introduction']
         projectPost.developer = request.POST['developer']

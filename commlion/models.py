@@ -88,6 +88,8 @@ class ProjectPost(models.Model):
     ref = models.TextField()
     state = models.CharField(max_length=5)
 
+    # 추후 state변경 자바스크립트 사용하기.
+
     uni_num = ForeignKey("Uni", on_delete=models.CASCADE, db_column="uni_num")
 
     def __str__(self): return (self.title + self.introduction[:20])

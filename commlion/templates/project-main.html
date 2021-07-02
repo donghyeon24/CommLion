@@ -9,21 +9,24 @@
 
 <div class="container">
   <!--프로젝트 내용 입력-->
-  <a href="{% url 'projectDetail' %}">
-  <div class="project-post">
-    <img src="https://mblogthumb-phinf.pstatic.net/MjAxOTA0MjhfMTIy/MDAxNTU2NDUwNTg2MDI0.3v9CU7X6wF_fxXtKJq-Z9MpSONrq7RDjZ8xRg928gYog.QDtGf5juUqN_ph7ypJmSXqOot178OQIKewVwNmLFJ58g.JPEG.tpdud7066/IMG_4271.JPG?type=w800" alt="">
-    <div class="title">🦁 CommLion</div>
-    <div class="content">
-      <ul>
-        <li>멋사 전용 커뮤니티</li>
-        <li>8기 김동현, 8기 박지은, 9기 성규동, 9기 양소열</li>
-        <li>21.06.29 ~</li>
-      </ul>
+  
+  {% for project in projects %}
+  <a href="{% url 'projectDetail' project.id %}">
+    <div class="project-post">
+      <img src="{{ project.file.url }}" alt="!Notfounded">
+      <div class="title">{{ project.title }}</div>
+      <div class="content">
+        <ul>
+          <li>{{ project.introduction }}</li>
+          <li>{{ project.developer }}</li>
+          <li>{{ project.dev_period }}</li>
+        </ul>
+      </div>
+      <div class="status_dev">개발중</div>
     </div>
-    <div class="status_dev">개발중</div>
-  </div>
-</a>
-
+  </a>
+  {% endfor %}
+    
   <!--프로젝트 내용 입력-->
   <div class="project-post">
     <img src="https://cdn.crowdpic.net/list-thumb/thumb_l_F15916567700E9F673272F2FBCA02494.jpg" alt="">
