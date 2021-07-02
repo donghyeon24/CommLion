@@ -185,6 +185,7 @@ a {
 .container .writing input {
   height: 100%;
   width: 880px;
+
   border: none;
   border-radius: 50px;
   background-color: #e5e5e5;

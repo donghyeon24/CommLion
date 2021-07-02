@@ -1,12 +1,18 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
-from .models import NoticePost, QnaPost, SessionPost, Student, ProjectPost, Uni
+from .models import NoticePost, QnaPost, SessionPost, Student, ProjectPost, Uni, Comment
 
 # Create your views here.
 
 
 def index(request):
-    return render(request, 'index.html')
+    check_exist_student = Student.objects.filter(student_id=0)
+    # 추후에 세션에서 받아온 ID값과 일치하도록 변경하기
+    if check_exist_student.exists() :
+        me = Student.objects.get(student_id=0)
+        return render(request, 'index.html',{'me':me})
+    else:
+        return render(request, 'index.html')
 
 
 def login(request):
@@ -14,7 +20,7 @@ def login(request):
 
 
 def noticeMain(request):
-    notices = NoticePost.objects.all()
+    notices = NoticePost.objects.all().order_by('-pub_date')
     return render(request, 'notice-main.html', {'notices': notices})
 
 
@@ -23,6 +29,9 @@ def sessionMain(request, session_num):
     if exist_session.exists():
         session = SessionPost.objects.get(session_num=session_num)
         return render(request, 'session-main.html', {'session': session})
+    elif (session_num==10):
+        return render(request, 'session-main.html')
+        # 최초접근 session 화면에 저장된 게시글이 없을 경우.
     else:
         return redirect('sessionWrite', session_num)
 
@@ -32,7 +41,7 @@ def qnaMain(request, session_num):
     if exist_session.exists():
         session = SessionPost.objects.get(session_num=session_num)
         qnas = QnaPost.objects.filter(session_id=session)
-        return render(request, 'qna-main.html', {'qnas': qnas, 'session':session})
+        return render(request, 'qna-main.html', {'qnas': qnas, 'session': session})
     else:
         return redirect('qnaWrite', session_num)
 
@@ -41,10 +50,11 @@ def qnaDetail(request, qna_id):
     exist_qna = QnaPost.objects.filter(id=qna_id)
     if exist_qna.exists():
         qna = QnaPost.objects.get(id=qna_id)
-        return render(request, 'qna-detail.html',{'qna':qna})
+        comments = Comment.objects.filter(qna_id=qna_id)
+        return render(request, 'qna-detail.html', {'qna': qna, 'comments': comments})
     else:
         return redirect('qnaMain', 10)
-    
+
 
 def qnaWrite(request, session_num):
     if request.method == 'POST':
@@ -64,14 +74,15 @@ def qnaWrite(request, session_num):
 
 
 def projectMain(request):
-    projects = ProjectPost.objects.all()
+
+    projects = ProjectPost.objects.all().order_by('-pub_date')
     return render(request, 'project-main.html',{'projects':projects})
 
 
 
-def projectDetail(request,project_id):
+def projectDetail(request, project_id):
     project = ProjectPost.objects.get(id=project_id)
-    return render(request, 'project-detail.html',{'project':project})
+    return render(request, 'project-detail.html', {'project': project})
 
 
 def sessionWrite(request, session_num):
@@ -85,10 +96,9 @@ def sessionWrite(request, session_num):
         sessionPost.student_id = Student.objects.get(student_id=0)
         sessionPost.save()
 
-
         return redirect('sessionMain', session_num)
     else:
-        return render(request, 'session-write.html')
+        return render(request, 'session-write.html',{'session_num':session_num})
 
 
 def noticeWrite(request):
@@ -119,9 +129,24 @@ def projectWrite(request):
         projectPost.ref = request.POST['ref']
         projectPost.state = request.POST['state']
         projectPost.uni_num = Uni.objects.get(uni_num=0)
+        projectPost.pub_date = timezone.datetime.now()
         # 아이디값 변경
         projectPost.save()
 
         return redirect('projectMain')
     else:
         return render(request, 'Project-write.html')
+
+
+def commentWrite(request):
+    if request.method == 'POST':
+        comment = Comment()
+        comment.answer = request.POST['answer']
+        comment.qna_id = QnaPost.objects.get(pk=request.POST['id'])
+        comment.student_id = Student.objects.get(student_id=0)
+        comment.like_num = "0"
+        comment.save()
+
+        return redirect('/qna/detail/' + "1")
+    else:
+        return render(request, 'qna-detail.html')

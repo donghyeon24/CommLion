@@ -8,6 +8,9 @@
 {% endblock %}
 
 {% block content %}
+<script>
+  alert( '🦁 '+{{session_num}}+'번 세션을 등록해주세요 🦁')
+</script>
 <form method="POST" id="done" enctype="multipart/form-data">
   {% csrf_token %}
   <div class = "divupload">
