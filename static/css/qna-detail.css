@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:wght@700&display=swap');
 
 body {
   margin: 0;
@@ -9,168 +9,203 @@ a {
   color: black;
 }
 
-body {
-  margin: 0px;
-}
-
 .container {
-  width: 100vw;
-  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-img {
+.container img {
   width: 100vw;
   height: 700px;
 }
 
-.writer {
-  width: 480px;
-  height: 50px;
-  font-family: roboto;
-  font-size: 24px;
-  font-weight: bold;
-  margin-left: 60px;
-  color: #767676;
-  margin-top: 30px;
-}
-
-.question {
+.container .question {
+  box-sizing: border-box;
   width: 100vw;
-  height: 90px;
-  font-family: roboto;
+  min-height: 500px;
+  padding: 36px 60px;
+  margin-top: 40px;
   font-size: 48px;
   font-weight: bold;
-  margin-left: 60px;
+  font-family: 'Roboto', sans-serif;
 }
 
-.hashtag {
-  width: 150px;
-  height: 60px;
-  border-radius: 40px;
-  color: #fe931b;
-  border-color: #fe931b;
-  margin-right: 20px;
-  font-family: roboto;
+.container .question .writer-and-date {
   font-size: 24px;
-  background-color: white;
+  font-weight: 800;
+  color: #767676;
 }
 
-.hashtag2 {
-  margin-left: 65px;
+.container .question .question__title {
+  margin-top: 10px;
+  font-size: 48px;
+  font-weight: 800;
+  color: black;
+}
+
+.container .question .hashtags {
   display: flex;
+  margin-top: 10px;
 }
 
-.contents {
-  height: 400px;
-  font-family: "Nanum Gothic", sans-serif;
+.container .question .hashtags .hashtag {
+  box-sizing: border-box;
+  height: 56px;
+  padding: 0 16px;
+  margin-right: 20px;
+  border-radius: 40px;
+  border-color: #fe931b;
   font-size: 24px;
-  font-weight: lighter;
-  margin-left: 60px;
-  margin-right: 60px;
-  margin-top: 40px;
+  font-weight: 800;
+  color: #fe931b;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 1);
 }
 
-.answer {
-  margin-left: 65px;
-  font-size: 30px;
-  margin-top: 33px;
-  font-family: roboto;
-  font-weight: bold;
+.container .question .question__body {
+  width: 100%;
+  height: 100%;
+  margin-top: 32px;
+  font-size: 24px;
+  font-weight: 300;
+  color: #767676;
+  word-break: break-all;
+}
+
+.container .answer {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  padding: 24px 60px;
+  border: 2px solid #e5e5e5;
+  font-size: 24px;
+  font-weight: 800;
+  color: black;
+}
+
+.container .answer i {
+  margin-right: 10px;
+  font-size: 48px;
+}
+
+.container .comments {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100%;
+  padding: 20px 60px;
+  margin-top: 24px;
+  list-style: none;
+}
+
+.container .comments .comment {
+  display: flex;
+  margin-bottom: 64px;
+}
+
+.container .comments .comment .recommend {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 20px;
+  align-items: center;
+  margin-right: 26px;
+}
+
+.container .comments .comment .recommend .fa-caret-up {
+  font-size: 80px;
+  color: #e5e5e5;
+}
+
+.container .comments .comment .recommend .fa-caret-down {
+  position: relative;
+  bottom: 32px;
+  font-size: 80px;
+  color: #e5e5e5;
+}
+
+.container .comments .comment .recommend .recommend-num {
+  position: relative;
+  bottom: 16px;
+  font-size: 20px;
+  font-weight: 800;
+  font-family: 'Roboto', 'Nanum Gothic', sans-serif;
+}
+
+.container .comments .comment .recommend .recommend-num.selected {
+  color: red;
+}
+
+.container .comments .comment .comment__content .comment__writer-and-date {
+  font-size: 24px;
+  font-weight: 800;
+  font-family: 'Roboto', 'Nanum Gothic', sans-serif;
+}
+
+.container
+  .comments
+  .comment
+  .comment__content
+  .comment__writer-and-date.selected {
+  color: red;
+}
+
+.container .comments .comment .comment__content .comment__body {
+  margin-top: 12px;
+  font-size: 24px;
+  font-weight: 300;
+  font-family: 'Roboto', 'Nanum Gothic', sans-serif;
+  color: #767676;
+}
+
+.container .comments .comment .comment__content .recomment {
+  font-size: 18px;
+  font-weight: 800;
+  font-family: 'Roboto', 'Nanum Gothic', sans-serif;
+  color: #767676;
+}
+
+.container .writing {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  margin-right: 45px;
-  border-top: 2px solid #e5e5e5;
-  border-bottom: 2px solid #e5e5e5;
-  margin-top: 50px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.solve {
-  color: blue;
-}
-
-.comments {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  height: 552px;
-}
-.comment {
-  display: flex;
-  flex-direction: row;
-}
-
-.recommend {
-  font-size: 40px;
-  display: flex;
-  flex-direction: column;
-  margin-left: 65px;
-  text-align: left;
-  margin-top: 48px;
-  width: 60px;
-  text-align: center;
-}
-
-.comment-writer {
-  font-family: roboto;
-  font-weight: bold;
-  font-size: 24px;
-  margin-left: 20px;
-  margin-top: 48px;
-}
-
-.comment-contents {
-  width: 870px;
-  margin-top: 10px;
-  font-family: roboto;
-  font-weight: lighter;
-  font-size: 24px;
-  color: #767676;
-}
-
-.recomment {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #767676;
-}
-
-.writing {
-  border-top: 2px solid #e5e5e5;
-  border-bottom: 2px solid #e5e5e5;
-  position: fixed;
-  height: 140px;
-  display: flex;
-  flex-direction: row;
-  padding-left: 52px;
   align-items: center;
-  color: #767676;
-  margin-bottom: 0px;
-}
-
-.input_content {
-  text-align: center;
-  width: 900px;
-  height: 96px;
-  background-color: #e5e5e5;
-  border-radius: 50px;
-  margin-left: -15px;
-  border: none;
-  color: #767676;
-  font-size: 40px;
-  top: 90px;
-}
-
-.submit_btn {
-  height: 96px;
-  width: 96px;
-  border: none;
-  font-family: "Nanum Gothic", sans-serif;
-  font-weight: bold;
-  font-size: 40px;
-  color: #fe931b;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 150px;
+  padding: 24px 40px;
+  border: 2px solid #e5e5e5;
   background-color: white;
-  margin-bottom: 20px;
-  margin-left: 5px;
+}
+
+.container .writing input {
+  height: 100%;
+  width: 880px;
+
+  border: none;
+  border-radius: 50px;
+  background-color: #e5e5e5;
+  font-size: 36px;
+  font-weight: 500;
+  font-family: 'Roboto', 'Nanum Gothic', sans-serif;
+}
+
+.container .writing input::placeholder {
+  text-align: center;
+  color: #767676;
+}
+
+.container .writing button {
+  position: relative;
+  left: 24px;
+  border: none;
+  background-color: white;
+  font-size: 80px;
+  font-weight: 800;
+  font-family: 'Roboto';
+  color: #ff9e1b;
 }

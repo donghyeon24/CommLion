@@ -11,8 +11,11 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
   height: 150px;
   padding: 0 48px;
+  background-color: white;
   box-shadow: 0 10px 100px 0 rgba(0, 0, 0, 0.1);
 }
 
