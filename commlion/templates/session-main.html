@@ -6,8 +6,10 @@
 {% endblock %}
 
 {% block content %}
+{% if session %}
 <div class="container">
-  <header class="title">효율적인 프로젝트<br>관리와 유저 기능 구현</header>
+      
+  <header class="title">{{ session.session_title }}</header>
   <iframe src="{{ session.session_file.url }}" style="width:960px; height:1800px;"></iframe>
   <!-- <img src="https://i.pinimg.com/originals/c3/2b/da/c32bdaaa440eff8be24d5b25b05fb113.jpg">
   <img
@@ -20,6 +22,16 @@
     <span>+</span>
   </button>
 </div>
+{% else %}
+<div class="container">
+      
+  <header class="title not_exist">세션을 등록해주세요.</header>
+  
+  <button class="create-btn" onclick="location.href='{% url 'sessionWrite' 10 %}'">
+    <span>+</span>
+  </button>
+</div>
+{% endif %}
 
 <div class="nav-bottom">
   <button class="pre-btn" onclick="location.href='{% url 'index' %}'">>
@@ -58,4 +70,5 @@
       {% if request.get_full_path == "/session/main/1/" %}<div class="selected-mark"></div>{% endif %}<span onclick="location.href='{% url 'sessionMain' 1 %}'">1nd</span></li>
   </ul>
 </div>
+
 {% endblock %}
