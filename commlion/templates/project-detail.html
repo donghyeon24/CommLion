@@ -7,20 +7,24 @@
 
 {% block content %}
 <div class="container">
+  
+  {% if project %}
+    
   <div class="top">
-    <div class="title">CommLion</div>
+    <div class="title">{{ project.title }}</div>
     <div class="status_dev">개발 중</div>
+    <!-- 추후변경 -->
   </div>
 
   <!--프로젝트 이미지-->
-  <img src="https://pbs.twimg.com/media/DcxH7rpVAAMevuE.jpg" alt="">
+  <img src="{{ project.file.url }}" alt="!NotFounded">
 
     <!--서비스 소개-->
     <div class="bottom">
       <div class="service">
         <ul>
           <li>🏀 서비스 소개</li>
-          <li class="name">CommLion</li>
+          <li class="name">"{{ project.introduction }}"</li>
         </ul>
       </div>
     </div>
@@ -30,7 +34,7 @@
       <div class="service">
         <ul>
           <li>😀 함께한 사람들</li>
-          <li class="name">8기 김동현, 8기 박지은, 9기 성규동, 9기 양소열</li>
+          <li class="name">{{ project.developer }}</li>
         </ul>
       </div>
     </div>
@@ -40,7 +44,7 @@
       <div class="service">
         <ul>
           <li>📆 개발 기간</li>
-          <li class="name">21.06.29 ~</li>
+          <li class="name">{{ project.dev_period }}</li>
         </ul>
       </div>
     </div>
@@ -50,7 +54,7 @@
         <div class="service">
           <ul>
             <li>💻 개발 스택</li>
-            <li class="name">HTML / CSS /JS /Python /Django</li>
+            <li class="name">{{ project.dev_stack }}</li>
           </ul>
         </div>
       </div>
@@ -60,10 +64,10 @@
         <div class="service">
           <ul>
             <li>📗 참고 자료</li>
-            <li class="name">Notion : https://www.notion.so/map-mo-3ae5a4750c70464cb00ee2719c9adae5</li>
-            <li class="name">Figma : https://www.figma.com/file/xw27vs6gO3Z3RplGw7XtQe/map-mo?node-id=95%3A37</li>
+            <li class="name">{{ project.ref }}</li>
           </ul>
         </div>
       </div>
+      {% endif %}
 </div>
 {% endblock %}
