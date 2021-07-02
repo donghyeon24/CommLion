@@ -1,7 +1,5 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
-from datetime import datetime, timezone
-from datetime import time
 from .models import NoticePost, QnaPost, SessionPost, Student, ProjectPost, Uni
 
 # Create your views here.
@@ -54,7 +52,6 @@ def qnaWrite(request, session_num):
         qnaPost.title = request.POST['title']
         qnaPost.content = request.POST['content']
         qnaPost.hashtag1 = request.POST['hashtag1']
-        qnaPost.hashtag2 = request.POST['hashtag2']
         qnaPost.file = request.FILES['img']
         qnaPost.pub_date = timezone.datetime.now()
         qnaPost.state = 0
@@ -88,7 +85,8 @@ def sessionWrite(request, session_num):
         sessionPost.student_id = Student.objects.get(student_id=0)
         sessionPost.save()
 
-        return redirect('session')
+
+        return redirect('sessionMain', session_num)
     else:
         return render(request, 'session-write.html')
 
