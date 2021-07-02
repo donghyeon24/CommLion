@@ -27,19 +27,35 @@
       < </span>
   </button>
   <ul class="nav-bottom-real">
-    <li class="nav-bottom-active">
-      <div class="selected-mark"></div>
-      <span>10th</span>
-    </li>
-    <li class="nav-bottom-inactive"><span onclick="location.href='{% url 'sessionMain' 9 %}'">9th</span></li>
-    <li class="nav-bottom-inactive"><span onclick="location.href='{% url 'sessionMain' 8 %}'">8th</span></li>
-    <li class="nav-bottom-inactive"><span onclick="location.href='{% url 'sessionMain' 7 %}'">7th</span></li>
-    <li class="nav-bottom-inactive"><span onclick="location.href='{% url 'sessionMain' 6 %}'">6th</span></li>
-    <li class="nav-bottom-inactive"><span onclick="location.href='{% url 'sessionMain' 5 %}'">5th</span></li>
-    <li class="nav-bottom-inactive"><span onclick="location.href='{% url 'sessionMain' 4 %}'">4th</span></li>
-    <li class="nav-bottom-inactive"><span onclick="location.href='{% url 'sessionMain' 3 %}'">3rd</span></li>
-    <li class="nav-bottom-inactive"><span onclick="location.href='{% url 'sessionMain' 2 %}'">2nd</span></li>
-    <li class="nav-bottom-inactive"><span onclick="location.href='{% url 'sessionMain' 1 %}'">1st</span></li>
+    <li class="{% if request.get_full_path == "/session/main/10/" %}nav-bottom-active10{% else %}nav-bottom-inactive{% endif %}">
+      {% if request.get_full_path == "/session/main/10/" %}<div class="selected-mark"></div>{% endif %}<span onclick="location.href='{% url 'sessionMain' 10 %}'">10th</span></li>
+
+    <li class="{% if request.get_full_path == "/session/main/9/" %}nav-bottom-active{% else %}nav-bottom-inactive{% endif %}">
+      {% if request.get_full_path == "/session/main/9/" %}<div class="selected-mark"></div>{% endif %}<span onclick="location.href='{% url 'sessionMain' 9 %}'">9th</span></li>
+
+    <li class="{% if request.get_full_path == "/session/main/8/" %}nav-bottom-active{% else %}nav-bottom-inactive{% endif %}">
+      {% if request.get_full_path == "/session/main/8/" %}<div class="selected-mark"></div>{% endif %}<span onclick="location.href='{% url 'sessionMain' 8 %}'">8th</span></li>
+
+    <li class="{% if request.get_full_path == "/session/main/7/" %}nav-bottom-active{% else %}nav-bottom-inactive{% endif %}">
+      {% if request.get_full_path == "/session/main/7/" %}<div class="selected-mark"></div>{% endif %}<span onclick="location.href='{% url 'sessionMain' 7 %}'">7th</span></li>
+
+    <li class="{% if request.get_full_path == "/session/main/6/" %}nav-bottom-active{% else %}nav-bottom-inactive{% endif %}">
+      {% if request.get_full_path == "/session/main/6/" %}<div class="selected-mark"></div>{% endif %}<span onclick="location.href='{% url 'sessionMain' 6 %}'">6th</span></li>
+      
+    <li class="{% if request.get_full_path == "/session/main/5/" %}nav-bottom-active{% else %}nav-bottom-inactive{% endif %}">
+      {% if request.get_full_path == "/session/main/5/" %}<div class="selected-mark"></div>{% endif %}<span onclick="location.href='{% url 'sessionMain' 5 %}'">5th</span></li>   
+      
+    <li class="{% if request.get_full_path == "/session/main/4/" %}nav-bottom-active{% else %}nav-bottom-inactive{% endif %}">
+      {% if request.get_full_path == "/session/main/4/" %}<div class="selected-mark"></div>{% endif %}<span onclick="location.href='{% url 'sessionMain' 4 %}'">4th</span></li>
+      
+    <li class="{% if request.get_full_path == "/session/main/3/" %}nav-bottom-active{% else %}nav-bottom-inactive{% endif %}">
+      {% if request.get_full_path == "/session/main/3/" %}<div class="selected-mark"></div>{% endif %}<span onclick="location.href='{% url 'sessionMain' 3 %}'">3th</span></li>      
+
+    <li class="{% if request.get_full_path == "/session/main/2/" %}nav-bottom-active{% else %}nav-bottom-inactive{% endif %}">
+      {% if request.get_full_path == "/session/main/2/" %}<div class="selected-mark"></div>{% endif %}<span onclick="location.href='{% url 'sessionMain' 2 %}'">2rd</span></li>     
+
+    <li class="{% if request.get_full_path == "/session/main/1/" %}nav-bottom-active{% else %}nav-bottom-inactive{% endif %}">
+      {% if request.get_full_path == "/session/main/1/" %}<div class="selected-mark"></div>{% endif %}<span onclick="location.href='{% url 'sessionMain' 1 %}'">1nd</span></li>
   </ul>
 </div>
 {% endblock %}
