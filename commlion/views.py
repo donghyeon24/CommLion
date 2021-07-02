@@ -42,8 +42,10 @@ def qnaMain(request, session_num):
         session = SessionPost.objects.get(session_num=session_num)
         qnas = QnaPost.objects.filter(session_id=session)
         return render(request, 'qna-main.html', {'qnas': qnas, 'session': session})
+
     else:
-        return redirect('qnaWrite', session_num)
+        return render(request, 'qna-main.html')
+        # 최초접근 session 화면에 저장된 게시글이 없을 경우.
 
 
 def qnaDetail(request, qna_id):
