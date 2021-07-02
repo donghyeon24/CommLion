@@ -44,7 +44,7 @@ urlpatterns = [
          views.projectDetail, name='projectDetail'),
     path('project/write/', views.projectWrite, name='projectWrite'),
 
-    path('commentWrite',
+    path('qna/detail/<int:qna_id>',
          views.commentWrite, name="commentWrite")
 ]
 

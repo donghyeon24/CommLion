@@ -49,11 +49,13 @@ def qnaMain(request, session_num):
 
 
 def qnaDetail(request, qna_id):
+    check_exist_student = Student.objects.filter(student_id=0)
     exist_qna = QnaPost.objects.filter(id=qna_id)
-    if exist_qna.exists():
+    if exist_qna.exists() & check_exist_student.exists():
         qna = QnaPost.objects.get(id=qna_id)
         comments = Comment.objects.filter(qna_id=qna_id)
-        return render(request, 'qna-detail.html', {'qna': qna, 'comments': comments})
+        me = Student.objects.get(student_id=0)
+        return render(request, 'qna-detail.html', {'qna': qna, 'comments': comments, 'me': me})
     else:
         return redirect('qnaMain', 10)
 
@@ -139,15 +141,17 @@ def projectWrite(request):
         return render(request, 'Project-write.html')
 
 
-def commentWrite(request):
+def commentWrite(request, qna_id):
     if request.method == 'POST':
         comment = Comment()
+        qna = QnaPost()
         comment.answer = request.POST['answer']
         comment.qna_id = QnaPost.objects.get(pk=request.POST['id'])
+      #  comment.qna_id = qna_id
         comment.student_id = Student.objects.get(student_id=0)
         comment.like_num = "0"
         comment.save()
 
-        return redirect('/qna/detail/' + "1")
+        return redirect('/qna/detail/' + str(qna_id) + '/')
     else:
         return render(request, 'qna-detail.html')
