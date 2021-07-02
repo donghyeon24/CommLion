@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@700&display=swap");
 
 body {
   margin: 0;
@@ -9,7 +9,7 @@ a {
   color: black;
 }
 
-input[type='file'] {
+input[type="file"] {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -42,6 +42,7 @@ input[type='file'] {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: #e5e5e5;
 }
 
 .divupload .file i {
@@ -55,14 +56,14 @@ input {
   border-top: 2px solid #e5e5e5;
   border-bottom: 2px solid #e5e5e5;
   margin-bottom: 30px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
 }
 
 .write_input {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 48px;
@@ -73,7 +74,7 @@ input {
 }
 
 .write_input_last {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 48px;
@@ -84,6 +85,10 @@ input {
 }
 
 .write_input_area {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
   width: 960px;
   height: 900px;
   margin-left: 60px;
@@ -93,7 +98,7 @@ input {
 
 input::placeholder,
 textarea::placeholder {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 48px;
   color: #e5e5e5;
   white-space: normal;
