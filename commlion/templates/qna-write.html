@@ -8,7 +8,7 @@
 {% block content %}
 <form method="POST" enctype="multipart/form-data" id="done">
   {% csrf_token %}
-  <div class = "divupload">
+  <div class="divupload">
     <label for="file_name" clss="file">
       <i class="fas fa-camera fa-7x"></i>
     </label>
@@ -16,10 +16,10 @@
 
   <!--Input태그 입력-->
   <input class="upload" type="file" name="img" id="file_name" class="upload-hidden">
-  <input type="text" class="write_input" placeholder="질문 제목">
-  <input type="text" class="write_input_last" placeholder="#해시태그">
-  <textarea class="write_input_area" placeholder=
-  "7th Session에 질문할 내용을 작성해주세요. (최대한 상세히 작성하면 더욱 좋은 답변을 얻을 수 있을 거에요.)">
+  <input type="text" name="title" class="write_input" placeholder="질문 제목">
+  <input type="text" name="hashtag1" class="write_input_last" placeholder="#해시태그">
+  <textarea name="content" class="write_input_area"
+    placeholder="7th Session에 질문할 내용을 작성해주세요. (최대한 상세히 작성하면 더욱 좋은 답변을 얻을 수 있을 거에요.)">
   </textarea>
 </form>
 {% endblock %}
