@@ -110,9 +110,22 @@ a {
   color: black;
 }
 
-.nav-bottom .nav-bottom-real .nav-bottom-active .selected-mark {
+.nav-bottom .nav-bottom-real .nav-bottom-active10 span {
+  color: black;
+}
+
+.nav-bottom .nav-bottom-real .nav-bottom-active10 .selected-mark {
   position: relative;
   left: 48px;
+  width: 12px;
+  height: 12px;
+  border-radius: 30px;
+  background-color: black;
+}
+
+.nav-bottom .nav-bottom-real .nav-bottom-active .selected-mark {
+  position: relative;
+  left: 29px;
   width: 12px;
   height: 12px;
   border-radius: 30px;
