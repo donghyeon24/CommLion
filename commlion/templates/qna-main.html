@@ -10,19 +10,17 @@
   <header class="title">Django 폼을 활용한 CRUD</header>
 
   <ul class="qna-container">
-    <li class="question" onclick="location.href='{% url 'qnaDetail' %}'">
-      <img src="https://pbs.twimg.com/ext_tw_video_thumb/1296265336451297282/pu/img/pYR6OO89b0kKWCQS.jpg:small"
+
+    {% for qna in qnas %}
+    <li class="question" onclick="location.href='{% url 'qnaDetail' qna.id %}'">
+      <img src="{{ qna.file.url }}"
         alt="!Notfounded">
-
-      <!-- 시작 -->
-
-      {% for qna in qnas %}
       <div class="content">
         <div class='writer-and-date'>죠르디 · {{qna.pub_date}}</div>
         <div class="question__title">{{qna.title}}</div>
         <div class="hashtags">
-          <button type="button" onclick="location.href=''" class="hashtag">#migrate</button>
-          <button type="button" onclick="location.href=''" class="hashtag">#kakao</button>
+          <button type="button" onclick="location.href=''" class="hashtag">#{{ qna.hashtag1 }}</button>
+          <button type="button" onclick="location.href=''" class="hashtag">#{{ qna.hashtag2 }}</button>
         </div>
         <div class="question__body">
           {{qna.content}}
@@ -35,86 +33,14 @@
           <div class="state">해결 중</div>
         </div>
       </div>
-      {% endfor %}
-
-
-
-      <!-- 끝 -->
-
-      <div class="content">
-        <div class='writer-and-date'>죠르디 · 2일전</div>
-        <div class="question__title">카카오프렌즈 죠르디 귀여워</div>
-        <div class="hashtags">
-          <button type="button" onclick="location.href=''" class="hashtag">#migrate</button>
-          <button type="button" onclick="location.href=''" class="hashtag">#kakao</button>
-        </div>
-        <div class="question__body">
-          빨-빨-빨간 맛, 궁금해 honey
-          깨물면 점점 녹아든 strawberry 그 맛
-          Corner candy shop 찾아봐 baby
-          내가 제일 좋아하는 건 여름 그 맛
-          야자나무 그늘 아래 졸고 싶고
-          뜨거운 여름밤의 바람은 불고
-          너무 쉽게 사랑 빠져 버릴 nineteen
-          우린 제법 어울리고 또 멋져
-          좋아 첫 눈에 반해 버린
-          네가 자꾸만 생각나
-          내 방식대로 갈래
-          빨-빨-빨간 맛, 궁금해 honey
-          깨물면 점점 녹아든 strawberry 그 맛
-          일곱 개의 무지갯빛 문을 열어
-          너의 세상은 짜릿해 멋있어, mmh
-        </div>
-        <div class="answer">
-          <div>
-            <i class="far fa-comment-dots" fa-10x></i>
-            <span class="answer__num">답변 7</span>
-          </div>
-          <div class="state">해결 중</div>
-        </div>
-      </div>
     </li>
+    {% endfor %}
 
-    <li class="question" onclick="">
-      <img src="https://pbs.twimg.com/ext_tw_video_thumb/1296265336451297282/pu/img/pYR6OO89b0kKWCQS.jpg:small"
-        alt="!Notfounded">
-
-      <div class="content">
-        <div class='writer-and-date'>죠르디 · 2일전</div>
-        <div class="question__title">카카오프렌즈 죠르디 귀여워</div>
-        <div class="hashtags">
-          <button type="button" onclick="location.href=''" class="hashtag">#migrate</button>
-          <button type="button" onclick="location.href=''" class="hashtag">#kakao</button>
-        </div>
-        <div class="question__body">
-          빨-빨-빨간 맛, 궁금해 honey
-          깨물면 점점 녹아든 strawberry 그 맛
-          Corner candy shop 찾아봐 baby
-          내가 제일 좋아하는 건 여름 그 맛
-          야자나무 그늘 아래 졸고 싶고
-          뜨거운 여름밤의 바람은 불고
-          너무 쉽게 사랑 빠져 버릴 nineteen
-          우린 제법 어울리고 또 멋져
-          좋아 첫 눈에 반해 버린
-          네가 자꾸만 생각나
-          내 방식대로 갈래
-          빨-빨-빨간 맛, 궁금해 honey
-          깨물면 점점 녹아든 strawberry 그 맛
-          일곱 개의 무지갯빛 문을 열어
-          너의 세상은 짜릿해 멋있어, mmh
-        </div>
-        <div class="answer">
-          <div>
-            <i class="far fa-comment-dots" fa-10x></i>
-            <span class="answer__num">답변 7</span>
-          </div>
-          <div class="state">해결 중</div>
-        </div>
-      </div>
-    </li>
   </ul>
-
+  
+  {% if session.session_num %}
   <button class="qna-btn" onclick="location.href='{% url 'qnaWrite' session.session_num %}'">질문하기</button>
+  {% endif %}
 </div>
 
 <div class="nav-bottom">
