@@ -6,7 +6,13 @@ from .models import NoticePost, QnaPost, SessionPost, Student, ProjectPost, Uni
 
 
 def index(request):
-    return render(request, 'index.html')
+    check_exist_student = Student.objects.filter(student_id=0)
+    # 추후에 세션에서 받아온 ID값과 일치하도록 변경하기
+    if check_exist_student.exists() :
+        me = Student.objects.get(student_id=0)
+        return render(request, 'index.html',{'me':me})
+    else:
+        return render(request, 'index.html')
 
 
 def login(request):
@@ -14,7 +20,7 @@ def login(request):
 
 
 def noticeMain(request):
-    notices = NoticePost.objects.all()
+    notices = NoticePost.objects.all().order_by('-pub_date')
     return render(request, 'notice-main.html', {'notices': notices})
 
 
@@ -23,6 +29,9 @@ def sessionMain(request, session_num):
     if exist_session.exists():
         session = SessionPost.objects.get(session_num=session_num)
         return render(request, 'session-main.html', {'session': session})
+    elif (session_num==10):
+        return render(request, 'session-main.html')
+        # 최초접근 session 화면에 저장된 게시글이 없을 경우.
     else:
         return redirect('sessionWrite', session_num)
 
@@ -64,7 +73,7 @@ def qnaWrite(request, session_num):
 
 
 def projectMain(request):
-    projects = ProjectPost.objects.all()
+    projects = ProjectPost.objects.all().order_by('-pub_date')
     return render(request, 'project-main.html',{'projects':projects})
 
 
@@ -88,7 +97,7 @@ def sessionWrite(request, session_num):
 
         return redirect('sessionMain', session_num)
     else:
-        return render(request, 'session-write.html')
+        return render(request, 'session-write.html',{'session_num':session_num})
 
 
 def noticeWrite(request):
@@ -119,6 +128,7 @@ def projectWrite(request):
         projectPost.ref = request.POST['ref']
         projectPost.state = request.POST['state']
         projectPost.uni_num = Uni.objects.get(uni_num=0)
+        projectPost.pub_date = timezone.datetime.now()
         # 아이디값 변경
         projectPost.save()
 

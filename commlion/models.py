@@ -87,6 +87,7 @@ class ProjectPost(models.Model):
     dev_stack = models.CharField(max_length=50)
     ref = models.TextField()
     state = models.CharField(max_length=5)
+    pub_date = models.DateTimeField(auto_now_add=True)
 
     # 추후 state변경 자바스크립트 사용하기.
 
