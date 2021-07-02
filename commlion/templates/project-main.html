@@ -22,7 +22,7 @@
           <li>{{ project.dev_period }}</li>
         </ul>
       </div>
-      <div class="status_dev">개발중</div>
+      <div class="{% if project.state == "개발 완료" %}status_dev{% else %}status_compl {% endif %}">{{project.state}}</div>
     </div>
   </a>
   {% endfor %}
