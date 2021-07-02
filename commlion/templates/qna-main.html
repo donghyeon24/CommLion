@@ -1,6 +1,7 @@
 {% extends 'menu-nav.html' %}
 {% load static %}
 
+
 {% block link %}
 <link rel="stylesheet" href="{% static 'css/qna-main.css' %}">
 {% endblock %}
@@ -10,11 +11,9 @@
   <header class="title">Django 폼을 활용한 CRUD</header>
 
   <ul class="qna-container">
-
     {% for qna in qnas %}
     <li class="question" onclick="location.href='{% url 'qnaDetail' qna.id %}'">
-      <img src="{{ qna.file.url }}"
-        alt="!Notfounded">
+      <img src="{{ qna.file.url }}" alt="!Notfounded">
       <div class="content">
         <div class='writer-and-date'>죠르디 · {{qna.pub_date}}</div>
         <div class="question__title">{{qna.title}}</div>
@@ -35,9 +34,8 @@
       </div>
     </li>
     {% endfor %}
-
   </ul>
-  
+
   {% if session.session_num %}
   <button class="qna-btn" onclick="location.href='{% url 'qnaWrite' session.session_num %}'">질문하기</button>
   {% endif %}
