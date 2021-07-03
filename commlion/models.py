@@ -1,7 +1,9 @@
+import datetime
 from django.db import models
 from django.db.models.fields import IntegerField
 from django.db.models.fields.related import ForeignKey
-
+from django.utils import timezone
+from pytz import utc
 # Create your models here.
 
 
@@ -33,6 +35,16 @@ class NoticePost(models.Model):
     # 소속 학교, 기수, 이름 불러올 때 사용
 
     def __str__(self): return self.title
+
+    def diff_days(self):
+        now = utc.localize(datetime.datetime.utcnow())
+        if ((now - self.pub_date).days == 0):
+            if(int((now - self.pub_date).seconds / 3600) == 0):
+                return (str(int((now - self.pub_date).seconds / 60)) + '분 전')
+            else:
+                return (str(int((now - self.pub_date).seconds / 3600)) + '시간 전')
+        else:
+            return (str((now - self.pub_date).days) + '일 전')
 
 
 class SessionPost(models.Model):
@@ -78,7 +90,8 @@ class Comment(models.Model):
 
 
 class ProjectPost(models.Model):
-    file = models.ImageField(upload_to="ProjectImage/", null=True, blank=True)
+    file = models.ImageField(upload_to="ProjectImage/",
+                             null=True, blank=True)
     title = models.CharField(max_length=30)
     introduction = models.TextField()
     developer = models.TextField()
@@ -90,6 +103,7 @@ class ProjectPost(models.Model):
 
     # 추후 state변경 자바스크립트 사용하기.
 
-    uni_num = ForeignKey("Uni", on_delete=models.CASCADE, db_column="uni_num")
+    uni_num = ForeignKey("Uni", on_delete=models.CASCADE,
+                         db_column="uni_num")
 
     def __str__(self): return (self.title + self.introduction[:20])

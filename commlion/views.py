@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from .models import NoticePost, QnaPost, SessionPost, Student, ProjectPost, Uni, Comment
+from datetime import datetime
 
 # Create your views here.
 
