@@ -90,8 +90,7 @@ class Comment(models.Model):
 
 
 class ProjectPost(models.Model):
-    file = models.ImageField(upload_to="ProjectImage/",
-                             null=True, blank=True)
+    file = models.ImageField(upload_to="ProjectImage/", null=True, blank=True)
     title = models.CharField(max_length=30)
     introduction = models.TextField()
     developer = models.TextField()
@@ -103,7 +102,6 @@ class ProjectPost(models.Model):
 
     # 추후 state변경 자바스크립트 사용하기.
 
-    uni_num = ForeignKey("Uni", on_delete=models.CASCADE,
-                         db_column="uni_num")
+    uni_num = ForeignKey("Uni", on_delete=models.CASCADE, db_column="uni_num")
 
     def __str__(self): return (self.title + self.introduction[:20])

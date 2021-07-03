@@ -23,13 +23,13 @@ def noticeMain(request):
         return render(request, 'notice-main.html', {'notices': notices, 'me': me})
     else:
         return redirect('index')
-    
+
 
 def sessionMain(request, session_num):
     exist_session = SessionPost.objects.filter(session_num=session_num)
     if exist_session.exists():
         session = SessionPost.objects.get(session_num=session_num)
-        return render(request, 'session-main.html', {'session': session})
+        return render(request, 'session-main.html', {'session': session, 'range': reversed(range(1, 11))})
     elif (session_num == 10):
         return render(request, 'session-main.html')
         # 최초접근 session 화면에 저장된 게시글이 없을 경우.
