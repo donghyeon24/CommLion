@@ -1,27 +1,32 @@
 {% extends 'menu-nav.html' %}
 {% load static %}
 
-{% block link %}
+{% block head %}
+<title>Notice</title>
 <link rel="stylesheet" href="{% static 'css/notice-main.css' %}">
-
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="login-alarm">
+  <img src="{% static 'img/likelion-logo-mini.png' %}" alt="">
 
+  <div class="greeting">
+    <span class="uni">{{me.uni_num.uni_name}} 멋쟁이사자처럼</span>
+    <span class="st-info">{{me.student_generation}}기 {{me.student_name}}님, 안녕하세요😀</span>
+  </div>
+</div>
+
+<div class="container">
   <div class="notice-posts">
-    
+
     {% for notice in notices %}
-      
-    
-      
     <div class="notice-post">
       <p class='title'>{{notice.title}}</p>
       <pre class='content'>{{notice.content}}</pre>
       <p class='writer'>{{notice.student_id.uni_num.uni_name}} 멋사 {{notice.student_id.student_generation}}기 {{notice.student_id.student_name}} · {{notice.diff_days}}</p>
     </div>
     {% endfor %}
-      
+
     <div class="notice-post">
       <p class='title'>🦁 6월 17일부터 멋사 9기 활동을 다시 시작합니다!!</p>
       <p class='content'>
@@ -35,6 +40,7 @@
       </p>
       <p class='writer'>경상대 멋사 8기 김가은 · 5일 전</p>
     </div>
+
     <div class="notice-post">
       <p class='title'>🦁 6월 17일부터 멋사 9기 활동을 다시 시작합니다!!</p>
       <p class='content'>
@@ -48,6 +54,7 @@
       </p>
       <p class='writer'>경상대 멋사 8기 김가은 · 5일 전</p>
     </div>
+
     <div class="notice-post">
       <p class='title'>🦁 6월 17일부터 멋사 9기 활동을 다시 시작합니다!!</p>
       <p class='content'>
@@ -61,6 +68,7 @@
       </p>
       <p class='writer'>경상대 멋사 8기 김가은 · 5일 전</p>
     </div>
+
     <div class="notice-post">
       <p class='title'>🦁 6월 17일부터 멋사 9기 활동을 다시 시작합니다!!</p>
       <p class='content'>
@@ -74,6 +82,7 @@
       </p>
       <p class='writer'>경상대 멋사 8기 김가은 · 5일 전</p>
     </div>
+
     <div class="notice-post">
       <p class='title'>🦁 6월 17일부터 멋사 9기 활동을 다시 시작합니다!!</p>
       <p class='content'>
@@ -88,6 +97,7 @@
       <p class='writer'>경상대 멋사 8기 김가은 · 5일 전</p>
     </div>
   </div>
+
   <button class="create-btn" onclick="location.href='{% url 'noticeWrite' %}'">
     <span>+</span>
   </button>

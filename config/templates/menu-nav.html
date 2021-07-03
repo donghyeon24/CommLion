@@ -7,12 +7,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>menu-nav</title>
+  {% block head %}
+  {% endblock %}
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
     integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <link rel="shortcut icon" href="http://www.google.com/s2/favicons?domain=https://www.likelion.net/">
   <link rel="stylesheet" href="{% static 'css/menu-nav.css' %}">
-  {% block link %}
-  {% endblock %}
 </head>
 
 <body>
@@ -21,32 +21,37 @@
       <li class="{% if request.resolver_match.url_name == 'noticeMain' %}selected{% else %}unselected{% endif %}">
         <a href="{% url 'noticeMain' %}">
           <span>Notice</span>
-          <div class="{% if request.resolver_match.url_name == 'noticeMain' %}selected{% else %}unselected{% endif %}"></div>
+          <div class="{% if request.resolver_match.url_name == 'noticeMain' %}selected{% else %}unselected{% endif %}">
+          </div>
         </a>
       </li>
       <li class="{% if request.resolver_match.url_name == 'sessionMain' %}selected{% else %}unselected{% endif %}">
         <a href="{% url 'sessionMain' 10 %}">
 
           <span>Session</span>
-          <div class="{% if request.resolver_match.url_name == 'sessionMain' %}selected{% else %}unselected{% endif %}"></div>
+          <div class="{% if request.resolver_match.url_name == 'sessionMain' %}selected{% else %}unselected{% endif %}">
+          </div>
         </a>
       </li>
       <li class="{% if request.resolver_match.url_name == 'qnaMain' %}selected{% else %}unselected{% endif %}">
         <a href="{% url 'qnaMain' 10 %}">
           <span>QnA</span>
-          <div class="{% if request.resolver_match.url_name == 'qnaMain' %}selected{% else %}unselected{% endif %}"></div>
+          <div class="{% if request.resolver_match.url_name == 'qnaMain' %}selected{% else %}unselected{% endif %}">
+          </div>
         </a>
       </li>
       <li class="{% if request.resolver_match.url_name == 'projectMain' %}selected{% else %}unselected{% endif %}">
         <a href="{% url 'projectMain' %}">
           <span>Project</span>
-          <div class="{% if request.resolver_match.url_name == 'projectMain' %}selected{% else %}unselected{% endif %}"></div>
+          <div class="{% if request.resolver_match.url_name == 'projectMain' %}selected{% else %}unselected{% endif %}">
+          </div>
         </a>
       </li>
     </ul>
     <div class="right">
       <i class="far fa-bell"></i>
-      <i class="fas fa-bars"  onclick="alert('🦁CommLion 제작 🦁 \n 🎨 멋사 8기 김동현 \n 🎀 멋사 8기 박지은 \n 💡 멋사 9기 성규동 \n 🎹 멋사 9기 양소열');"></i>
+      <i class="fas fa-bars"
+        onclick="alert('🦁CommLion 제작 🦁 \n 🎨 멋사 8기 김동현 \n 🎀 멋사 8기 박지은 \n 💡 멋사 9기 성규동 \n 🎹 멋사 9기 양소열');"></i>
     </div>
   </nav>
   {% block content %}

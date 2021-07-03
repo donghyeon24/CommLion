@@ -7,13 +7,7 @@ from datetime import datetime
 
 
 def index(request):
-    check_exist_student = Student.objects.filter(student_id=0)
-    # 추후에 세션에서 받아온 ID값과 일치하도록 변경하기
-    if check_exist_student.exists():
-        me = Student.objects.get(student_id=0)
-        return render(request, 'index.html', {'me': me})
-    else:
-        return render(request, 'index.html')
+    return render(request, 'index.html')
 
 
 def login(request):
@@ -21,9 +15,15 @@ def login(request):
 
 
 def noticeMain(request):
-    notices = NoticePost.objects.all().order_by('-pub_date')
-    return render(request, 'notice-main.html', {'notices': notices})
-
+    check_exist_student = Student.objects.filter(student_id=0)
+    # 추후에 세션에서 받아온 ID값과 일치하도록 변경하기
+    if check_exist_student.exists():
+        me = Student.objects.get(student_id=0)
+        notices = NoticePost.objects.all().order_by('-pub_date')
+        return render(request, 'notice-main.html', {'notices': notices, 'me': me})
+    else:
+        return redirect('index')
+    
 
 def sessionMain(request, session_num):
     exist_session = SessionPost.objects.filter(session_num=session_num)
