@@ -17,8 +17,8 @@ a {
   margin-top: 100px;
   overflow-x: auto;
 }
-.not_exist{
-  top:40%
+.not_exist {
+  top: 40%;
 }
 .container .title {
   position: relative;
@@ -116,7 +116,7 @@ a {
   color: black;
 }
 
-.nav-bottom .nav-bottom-real .nav-bottom-active10 .selected-mark {
+.nav-bottom .nav-bottom-real .nav-bottom-active10.selected-mark {
   position: relative;
   left: 48px;
   width: 12px;
@@ -125,7 +125,7 @@ a {
   background-color: black;
 }
 
-.nav-bottom .nav-bottom-real .nav-bottom-active .selected-mark {
+.nav-bottom .nav-bottom-real .nav-bottom-active.selected-mark {
   position: relative;
   left: 29px;
   width: 12px;
