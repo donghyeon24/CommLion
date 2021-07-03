@@ -1,7 +1,8 @@
 {% extends 'detail-nav.html' %}
 {% load static %}
 
-{% block link %}
+{% block head %}
+<title>QnA</title>
 <link rel="stylesheet" href="{% static 'css/qna-detail.css' %}">
 {% endblock %}
 
@@ -27,7 +28,7 @@
     <span class="answer__num"> 댓글 {{comments_num}}</span>
   </div>
 
-  
+
   <ul class="comments">
     {% for comment in comments %}
     <li class="comment">
