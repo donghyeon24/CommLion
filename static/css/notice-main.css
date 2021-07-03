@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:wght@700&display=swap");
 
 body {
   margin: 0;
@@ -58,14 +58,14 @@ a {
   margin-right: 32px;
   font-size: 32px;
   font-weight: 800;
-  font-family: 'Roboto', 'Nanum Gothic', sans-serif;
+  font-family: "Roboto", "Nanum Gothic", sans-serif;
   color: #ff9e1b;
 }
 
 .login-alarm .greeting .st-info {
   font-size: 32px;
   font-weight: 500;
-  font-family: 'Roboto', 'Nanum Gothic', sans-serif;
+  font-family: "Roboto", "Nanum Gothic", sans-serif;
   color: #767676;
 }
 
@@ -89,7 +89,7 @@ a {
 }
 
 .container .notice-post .title {
-  font-family: 'Roboto', 'Nanum Gothic', sans-serif;
+  font-family: "Roboto", "Nanum Gothic", sans-serif;
   font-weight: 800;
   font-size: 32px;
   color: #ff9e1b;
@@ -97,13 +97,13 @@ a {
 
 .container .notice-post .content {
   padding: 0 32px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 500;
   font-size: 32px;
 }
 
 .container .notice-post .writer {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 800;
   font-size: 16px;
   color: #767676;
@@ -126,6 +126,6 @@ a {
 
 .container .create-btn span {
   font-size: 112px;
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
   color: white;
 }

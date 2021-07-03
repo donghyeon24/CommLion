@@ -41,22 +41,36 @@
   </button>
   <ul class="nav-bottom-real">
     {% for i in range %}
-    <li class="{% if request.get_full_path == "session/main/'{{ i }}'/'" %}nav-bottom-inactive{% else %}nav-bottom-active{% endif %}">
-      
-      <div class="{% if request.get_full_path == "session/main/'{{ i }}'/'" %}selected-mark"></div>
-      {% endif %}
-      <span onclick="location.href='{% url 'sessionMain' 9 %}'">
+
+    <li class="" id="nav_order{{ i }}">
+      <div class="" id="nav_dot{{ i }}"></div>
+      <span onclick="location.href='{% url 'sessionMain' i %}'">
         {% if i > 3 %} {{ i }}th {% endif %}
         {% if i == 3 %} {{ i }}rd {% endif %}
         {% if i == 2 %} {{ i }}nd {% endif %}
         {% if i == 1 %} {{ i }}st {% endif %}
-      
-      
       </span>
-
-      
     </li>
-    {% endfor %}
+    {% endfor %} 
+    <script>
+
+
+      for (var i =1 ; i < 11; i++){
+        var url = "/session/main/" +  i + "/";
+
+        if ({{ session.session_num }} == i ){
+          var orderId = 'nav_order'+{{ session.session_num }};
+          var dotId = 'nav_dot'+{{ session.session_num }};
+          var nav_order2 = document.getElementById(orderId);
+          var nav_dot2 = document.getElementById(dotId);
+          nav_order2.classList.add('nav-bottom-active');
+          nav_dot2.classList.add('selected-mark');
+          consol.log(i)
+        }
+    }
+    </script>
+
+  
   </ul>
 </div>
 
