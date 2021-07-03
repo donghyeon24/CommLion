@@ -23,8 +23,7 @@
     <div class="notice-post">
       <p class='title'>{{notice.title}}</p>
       <pre class='content'>{{notice.content}}</pre>
-      <p class='writer'>{{notice.student_id.student_generation}} {{notice.student_id.student_name}} {{notice.pub_date}}
-      </p>
+      <p class='writer'>{{notice.student_id.uni_num.uni_name}} 멋사 {{notice.student_id.student_generation}}기 {{notice.student_id.student_name}} · {{notice.diff_days}}</p>
     </div>
     {% endfor %}
 
