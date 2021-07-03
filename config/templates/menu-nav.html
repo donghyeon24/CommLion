@@ -21,32 +21,37 @@
       <li class="{% if request.resolver_match.url_name == 'noticeMain' %}selected{% else %}unselected{% endif %}">
         <a href="{% url 'noticeMain' %}">
           <span>Notice</span>
-          <div class="{% if request.resolver_match.url_name == 'noticeMain' %}selected{% else %}unselected{% endif %}"></div>
+          <div class="{% if request.resolver_match.url_name == 'noticeMain' %}selected{% else %}unselected{% endif %}">
+          </div>
         </a>
       </li>
       <li class="{% if request.resolver_match.url_name == 'sessionMain' %}selected{% else %}unselected{% endif %}">
         <a href="{% url 'sessionMain' 10 %}">
 
           <span>Session</span>
-          <div class="{% if request.resolver_match.url_name == 'sessionMain' %}selected{% else %}unselected{% endif %}"></div>
+          <div class="{% if request.resolver_match.url_name == 'sessionMain' %}selected{% else %}unselected{% endif %}">
+          </div>
         </a>
       </li>
       <li class="{% if request.resolver_match.url_name == 'qnaMain' %}selected{% else %}unselected{% endif %}">
         <a href="{% url 'qnaMain' 10 %}">
           <span>QnA</span>
-          <div class="{% if request.resolver_match.url_name == 'qnaMain' %}selected{% else %}unselected{% endif %}"></div>
+          <div class="{% if request.resolver_match.url_name == 'qnaMain' %}selected{% else %}unselected{% endif %}">
+          </div>
         </a>
       </li>
       <li class="{% if request.resolver_match.url_name == 'projectMain' %}selected{% else %}unselected{% endif %}">
         <a href="{% url 'projectMain' %}">
           <span>Project</span>
-          <div class="{% if request.resolver_match.url_name == 'projectMain' %}selected{% else %}unselected{% endif %}"></div>
+          <div class="{% if request.resolver_match.url_name == 'projectMain' %}selected{% else %}unselected{% endif %}">
+          </div>
         </a>
       </li>
     </ul>
     <div class="right">
       <i class="far fa-bell"></i>
-      <i class="fas fa-bars"  onclick="alert('🦁CommLion 제작 🦁 \n 🎨 멋사 8기 김동현 \n 🎀 멋사 8기 박지은 \n 💡 멋사 9기 성규동 \n 🎹 멋사 9기 양소열');"></i>
+      <i class="fas fa-bars"
+        onclick="alert('🦁CommLion 제작 🦁 \n 🎨 멋사 8기 김동현 \n 🎀 멋사 8기 박지은 \n 💡 멋사 9기 성규동 \n 🎹 멋사 9기 양소열');"></i>
     </div>
   </nav>
   {% block content %}
