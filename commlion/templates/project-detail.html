@@ -1,74 +1,75 @@
 {% extends 'detail-nav.html' %}
 {% load static %}
 
-{% block link %}
+{% block head %}
+<title>Project</title>
 <link rel="stylesheet" href="{% static 'css/project-detail.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="container">
-  
+
   {% if project %}
-    
+
   <div class="top">
     <div class="title">{{ project.title }}</div>
     <div class="
-    {% if project.state == "개발 완료" %}status_dev{% else %}status_compl {% endif %}">{{project.state}}</div>
+    {% if project.state == " 개발 완료" %}status_dev{% else %}status_compl {% endif %}">{{project.state}}</div>
     <!-- 추후변경 -->
   </div>
 
   <!--프로젝트 이미지-->
   <img src="{{ project.file.url }}" alt="!NotFounded">
 
-    <!--서비스 소개-->
-    <div class="bottom">
-      <div class="service">
-        <ul>
-          <li>🏀 서비스 소개</li>
-          <li class="name">"{{ project.introduction }}"</li>
-        </ul>
-      </div>
+  <!--서비스 소개-->
+  <div class="bottom">
+    <div class="service">
+      <ul>
+        <li>🏀 서비스 소개</li>
+        <li class="name">"{{ project.introduction }}"</li>
+      </ul>
     </div>
+  </div>
 
-    <!--함께한 사람들-->
-    <div class="bottom">
-      <div class="service">
-        <ul>
-          <li>😀 함께한 사람들</li>
-          <li class="name">{{ project.developer }}</li>
-        </ul>
-      </div>
+  <!--함께한 사람들-->
+  <div class="bottom">
+    <div class="service">
+      <ul>
+        <li>😀 함께한 사람들</li>
+        <li class="name">{{ project.developer }}</li>
+      </ul>
     </div>
+  </div>
 
-    <!--개발 기간-->
-    <div class="bottom">
-      <div class="service">
-        <ul>
-          <li>📆 개발 기간</li>
-          <li class="name">{{ project.dev_period }}</li>
-        </ul>
-      </div>
+  <!--개발 기간-->
+  <div class="bottom">
+    <div class="service">
+      <ul>
+        <li>📆 개발 기간</li>
+        <li class="name">{{ project.dev_period }}</li>
+      </ul>
     </div>
+  </div>
 
-      <!--개발 스택-->
-      <div class="bottom">
-        <div class="service">
-          <ul>
-            <li>💻 개발 스택</li>
-            <li class="name">{{ project.dev_stack }}</li>
-          </ul>
-        </div>
-      </div>
-      
-      <!--참고 자료-->
-      <div class="bottom">
-        <div class="service">
-          <ul>
-            <li>📗 참고 자료</li>
-            <li class="name">{{ project.ref }}</li>
-          </ul>
-        </div>
-      </div>
-      {% endif %}
+  <!--개발 스택-->
+  <div class="bottom">
+    <div class="service">
+      <ul>
+        <li>💻 개발 스택</li>
+        <li class="name">{{ project.dev_stack }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <!--참고 자료-->
+  <div class="bottom">
+    <div class="service">
+      <ul>
+        <li>📗 참고 자료</li>
+        <li class="name">{{ project.ref }}</li>
+      </ul>
+    </div>
+  </div>
+  {% endif %}
 </div>
 {% endblock %}

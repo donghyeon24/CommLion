@@ -21,7 +21,7 @@ def noticeMain(request):
         notices = NoticePost.objects.all().order_by('-pub_date')
         return render(request, 'notice-main.html', {'notices': notices, 'me': me})
     else:
-        return render(request, 'index.html')
+        return redirect('index')
     
 
 def sessionMain(request, session_num):
