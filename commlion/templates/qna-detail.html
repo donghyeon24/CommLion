@@ -24,7 +24,7 @@
 
   <div class="answer">
     <i class="far fa-comment-dots" fa-10x></i>
-    <span class="answer__num">답변 7</span>
+    <span class="answer__num"> 댓글 {{comments_num}}</span>
   </div>
 
   
@@ -32,9 +32,9 @@
     {% for comment in comments %}
     <li class="comment">
       <div class="recommend">
-        <i class="fas fa-caret-up"></i>
+        <i class="fas fa-caret-up" value="1" name="recommend"></i>
         <span class="recommend-num selected">{{comment.like_num}}</span>
-        <i class="fas fa-caret-down"></i>
+        <i class="fas fa-caret-down" value="-1" name="recomment"></i>
       </div>
 
       <div class="comment__content">

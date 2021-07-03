@@ -45,7 +45,9 @@ urlpatterns = [
     path('project/write/', views.projectWrite, name='projectWrite'),
 
     path('qna/detail/<int:qna_id>',
-         views.commentWrite, name="commentWrite")
+         views.commentWrite, name="commentWrite"),
+
+    #    path('qna/detail/<int:qna_id>', views.commentLike, name="commentLike"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
