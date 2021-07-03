@@ -23,7 +23,7 @@
     <li class="question" onclick="location.href='{% url 'qnaDetail' qna.id %}'">
       <img src="{{ qna.file.url }}" alt="!Notfounded">
       <div class="content">
-        <div class='writer-and-date'>{{qna.session_id.student_id.student_name}} · {{qna.pub_date}}</div>
+        <div class='writer-and-date'>죠르디 · {{qna.pub_date}}</div>
         <div class="question__title">{{qna.title}}</div>
         <div class="hashtags">
           <button type="button" onclick="location.href=''" class="hashtag">#{{ qna.hashtag1 }}</button>
@@ -50,11 +50,14 @@
   {% if session.session_num %}
   <button class="qna-btn" onclick="location.href='{% url 'qnaWrite' session.session_num %}'">질문하기</button>
   {% endif %}
-  <div class="nav-bottom">
-    <button class="pre-btn" onclick="history.back()">
-      <span>
-        < </span>
-    </button>
+</div>
+
+<div class="nav-bottom">
+  <button class="pre-btn" onclick="history.back()">
+    <span>
+      < </span>
+  </button>
+  
 <ul class="nav-bottom-real">
   {% for i in range %}
 
