@@ -50,7 +50,7 @@ def qnaMain(request, session_num):
 
 def qnaDetail(request, qna_id):
     check_exist_student = Student.objects.filter(student_id=0)
-    comments_num = Comment.objects.count()
+    comments_num = Comment.objects.filter(qna_id=qna_id).count()
     exist_qna = QnaPost.objects.filter(id=qna_id)
     if exist_qna.exists() & check_exist_student.exists():
         qna = QnaPost.objects.get(id=qna_id)
