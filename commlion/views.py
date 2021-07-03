@@ -1,18 +1,13 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from .models import NoticePost, QnaPost, SessionPost, Student, ProjectPost, Uni, Comment
+from datetime import datetime
 
 # Create your views here.
 
 
 def index(request):
-    check_exist_student = Student.objects.filter(student_id=0)
-    # 추후에 세션에서 받아온 ID값과 일치하도록 변경하기
-    if check_exist_student.exists():
-        me = Student.objects.get(student_id=0)
-        return render(request, 'index.html', {'me': me})
-    else:
-        return render(request, 'index.html')
+    return render(request, 'index.html')
 
 
 def login(request):
@@ -20,9 +15,15 @@ def login(request):
 
 
 def noticeMain(request):
-    notices = NoticePost.objects.all().order_by('-pub_date')
-    return render(request, 'notice-main.html', {'notices': notices})
-
+    check_exist_student = Student.objects.filter(student_id=0)
+    # 추후에 세션에서 받아온 ID값과 일치하도록 변경하기
+    if check_exist_student.exists():
+        me = Student.objects.get(student_id=0)
+        notices = NoticePost.objects.all().order_by('-pub_date')
+        return render(request, 'notice-main.html', {'notices': notices, 'me': me})
+    else:
+        return redirect('index')
+    
 
 def sessionMain(request, session_num):
     exist_session = SessionPost.objects.filter(session_num=session_num)
@@ -49,11 +50,14 @@ def qnaMain(request, session_num):
 
 
 def qnaDetail(request, qna_id):
+    check_exist_student = Student.objects.filter(student_id=0)
+    comments_num = Comment.objects.filter(qna_id=qna_id).count()
     exist_qna = QnaPost.objects.filter(id=qna_id)
-    if exist_qna.exists():
+    if exist_qna.exists() & check_exist_student.exists():
         qna = QnaPost.objects.get(id=qna_id)
         comments = Comment.objects.filter(qna_id=qna_id)
-        return render(request, 'qna-detail.html', {'qna': qna, 'comments': comments})
+        me = Student.objects.get(student_id=0)
+        return render(request, 'qna-detail.html', {'qna': qna, 'comments': comments, 'me': me, 'comments_num': comments_num})
     else:
         return redirect('qnaMain', 10)
 
@@ -139,15 +143,16 @@ def projectWrite(request):
         return render(request, 'Project-write.html')
 
 
-def commentWrite(request):
+def commentWrite(request, qna_id):
     if request.method == 'POST':
         comment = Comment()
+        qna = QnaPost()
         comment.answer = request.POST['answer']
         comment.qna_id = QnaPost.objects.get(pk=request.POST['id'])
         comment.student_id = Student.objects.get(student_id=0)
         comment.like_num = "0"
         comment.save()
 
-        return redirect('/qna/detail/' + "1")
+        return redirect('/qna/detail/' + str(qna_id) + '/')
     else:
         return render(request, 'qna-detail.html')

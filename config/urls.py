@@ -44,8 +44,10 @@ urlpatterns = [
          views.projectDetail, name='projectDetail'),
     path('project/write/', views.projectWrite, name='projectWrite'),
 
-    path('commentWrite',
-         views.commentWrite, name="commentWrite")
+    path('qna/detail/<int:qna_id>',
+         views.commentWrite, name="commentWrite"),
+
+    #    path('qna/detail/<int:qna_id>', views.commentLike, name="commentLike"),
 ]
 
 if settings.DEBUG:

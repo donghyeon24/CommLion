@@ -1,19 +1,19 @@
 {% extends 'write-nav.html' %}
 {% load static %}
 
-<script src="{% static 'js/session-write.js' %}" ></script>
-{% block link %}
+{% block head %}
+<title>Session</title>
 <link rel="stylesheet" href="{% static 'css/session-write.css' %}">
-<script type="text/javascript" src="{% static 'js/session-write.js' %}" ></script>
+<script type="text/javascript" src="{% static 'js/session-write.js' %}"></script>
 {% endblock %}
 
 {% block content %}
 <script>
-  alert( '🦁 '+{{session_num}}+'번 세션을 등록해주세요 🦁')
+  alert('🦁 ' + {{ session_num }}+'번 세션을 등록해주세요 🦁')
 </script>
 <form method="POST" id="done" enctype="multipart/form-data">
   {% csrf_token %}
-  <div class = "divupload">
+  <div class="divupload">
     <label for="file_name" class="file">
       <i class="fas fa-file-pdf"></i>
     </label>
@@ -21,7 +21,7 @@
 
   <input class="upload" type="file" name="img" id="file_name" class="upload-hidden">
   <input type="text" class="write_input" name="title" placeholder="세션 제목">
-  <textarea name="content" class="write_input_area"placeholder="내용"></textarea><br>
+  <textarea name="content" class="write_input_area" placeholder="내용"></textarea><br>
 
 </form>
 {% endblock %}

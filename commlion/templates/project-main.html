@@ -1,79 +1,84 @@
 {% extends 'menu-nav.html' %}
 {% load static %}
 
-{% block link %}
+{% block head %}
+<title>Project</title>
 <link rel="stylesheet" href="{% static 'css/project-main.css' %}">
 {% endblock %}
 
 {% block content %}
-
 <div class="container">
   <!--프로젝트 내용 입력-->
-  
+
   {% for project in projects %}
   <a href="{% url 'projectDetail' project.id %}">
     <div class="project-post">
       <img src="{{ project.file.url }}" alt="!Notfounded">
-      <div class="title">{{ project.title }}</div>
-      <div class="content">
-        <ul>
+
+      <div class="content-container">
+        <div class="title">{{ project.title }}</div>
+        <ul class="content">
           <li>{{ project.introduction }}</li>
           <li>{{ project.developer }}</li>
           <li>{{ project.dev_period }}</li>
         </ul>
+        <div class="{% if project.state == '개발 완료' %} status_compl {% else %} status_dev {% endif %}">
+          {{project.state}}
+        </div>
       </div>
-      <div class="status_dev">개발중</div>
     </div>
   </a>
   {% endfor %}
-    
-  <!--프로젝트 내용 입력-->
+
   <div class="project-post">
     <img src="https://cdn.crowdpic.net/list-thumb/thumb_l_F15916567700E9F673272F2FBCA02494.jpg" alt="">
-    <div class="title">🎨 MapMo</div>
-    <div class="content">
-      <ul>
+
+    <div class="content-container">
+      <div class="title">🎨 MapMo</div>
+      <ul class="content">
         <li>위치기반 메모서비스</li>
         <li>8기 김동현, 8기 박지은, 9기 성규동, 9기 양소열</li>
         <li>21.06.29 ~</li>
       </ul>
+      <div class="status_compl">개발 완료</div>
     </div>
-    <div class="status_compl">개발 완료</div>
   </div>
 
-  <!--프로젝트 내용 입력-->
   <div class="project-post">
-    <img src="https://mblogthumb-phinf.pstatic.net/MjAxOTA1MjdfMTY4/MDAxNTU4OTUyMDA2NjIz.u_QCMf_WrfOqC47tWg6OTTLeOAJOVhCOb_RAWAW0k5Yg.ShVo90gIu6oh9vaC2O7JMLp7nEFnuSdYL3CUAB0Sqggg.JPEG.alsrud355w/IMG_1415.JPG?type=w800" alt="">
-    <div class="title">📖 wa플래너</div>
-    <div class="content">
-      <ul>
+    <img
+      src="https://mblogthumb-phinf.pstatic.net/MjAxOTA1MjdfMTY4/MDAxNTU4OTUyMDA2NjIz.u_QCMf_WrfOqC47tWg6OTTLeOAJOVhCOb_RAWAW0k5Yg.ShVo90gIu6oh9vaC2O7JMLp7nEFnuSdYL3CUAB0Sqggg.JPEG.alsrud355w/IMG_1415.JPG?type=w800"
+      alt="">
+
+    <div class="content-container">
+      <div class="title">📖 wa플래너</div>
+      <ul class="content">
         <li>열품타 같은 웹페이지 플래너 서비스</li>
         <li>8기 이다혜, 8기 조승한, 9기 이승백, 9기 이도연</li>
         <li>21.06.29 ~</li>
       </ul>
+      <div class="status_dev">개발중</div>
     </div>
-    <div class="status_dev">개발중</div>
   </div>
 
-  <!--프로젝트 내용 입력-->
   <div class="project-post">
     <img src="https://i.pinimg.com/originals/86/d2/1c/86d21c73c55d8f64e4b4bcf85821149d.jpg" alt="">
-    <div class="title">🧁 아동급식카드</div>
-    <div class="content">
-      <ul>
+
+    <div class="content-container">
+      <div class="title">🧁 아동급식카드</div>
+      <ul class="content">
         <li>진주시 아동급식카드 사용 관련</li>
         <li>8기 김가은, 9기 이재성, 9기 한규영, 9기 김유경</li>
         <li>21.06.29 ~</li>
       </ul>
+      <div class="status_dev">개발중</div>
     </div>
-    <div class="status_dev">개발중</div>
   </div>
 
-    <!--글쓰기 버튼-->
-    <button class="create-btn" onclick="location.href='{% url 'projectWrite' %}'">
-      <span>+</span>
-    </button>
-    
+  <!--글쓰기 버튼-->
+  <button class="create-btn" onclick="location.href='{% url 'projectWrite' %}'">
+    <span>+</span>
+  </button>
+
 </div>
 
 

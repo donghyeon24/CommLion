@@ -1,7 +1,8 @@
 {% extends 'index-nav.html' %}
 {% load static %}
 
-{% block link %}
+{% block head %}
+<title>CommLion</title>
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
 
@@ -11,14 +12,15 @@
   <div>
     <h1>CommLion</h1>
     <p>오직 멋쟁이사자처럼을 위한 학교별 커뮤니티 공지사항, QnA ... 이제 모든 것들을 CommLion 한 곳에서 경험해보세요.</p>
-    
+
     {% if me %}
-    <button type="button" onclick="javascript:location.href='{% url 'noticeMain' %}'; alert('{{me.uni_num.uni_name}} 멋쟁이사자처럼 \n'+'{{me.student_generation}}'+'{{me.student_name}}님, 안녕하세요😀' );">시작하기</button>
-    {% else %}  
+    <button type="button"
+      onclick="javascript:location.href='{% url 'noticeMain' %}'; alert('{{me.uni_num.uni_name}} 멋쟁이사자처럼 \n'+'{{me.student_generation}}'+'{{me.student_name}}님, 안녕하세요😀' );">시작하기</button>
+    {% else %}
     <button type="button" onclick="location.href='{% url 'noticeMain' %}'">시작하기</button>
     <!-- <button type="button" onclick=alert("로그인을 해주세요.")>시작하기</button> -->
     {% endif %}
-    
+
   </div>
 </div>
 {% endblock %}

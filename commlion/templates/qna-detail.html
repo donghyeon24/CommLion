@@ -1,7 +1,8 @@
 {% extends 'detail-nav.html' %}
 {% load static %}
 
-{% block link %}
+{% block head %}
+<title>QnA</title>
 <link rel="stylesheet" href="{% static 'css/qna-detail.css' %}">
 {% endblock %}
 
@@ -24,86 +25,35 @@
 
   <div class="answer">
     <i class="far fa-comment-dots" fa-10x></i>
-    <span class="answer__num">답변 7</span>
+    <span class="answer__num"> 댓글 {{comments_num}}</span>
   </div>
 
+
   <ul class="comments">
+    {% for comment in comments %}
     <li class="comment">
       <div class="recommend">
-        <i class="fas fa-caret-up"></i>
-        <span class="recommend-num selected">5</span>
-        <i class="fas fa-caret-down"></i>
+        <i class="fas fa-caret-up" value="1" name="recommend"></i>
+        <span class="recommend-num selected">{{comment.like_num}}</span>
+        <i class="fas fa-caret-down" value="-1" name="recomment"></i>
       </div>
 
       <div class="comment__content">
-        <span class="comment__writer-and-date selected">동현이형</span>
+        <span class="comment__writer-and-date selected">{{me.student_name}}</span>
         <p class="comment__body">
-          Don't worry 'bout me. 오지랖 떨지 말고 신경 꺼. 온 세상이 날 등져도 I don't give a fuck. God is watchin' over me, 나 죽을 일 없어. 내
-          걱정은 세상에서 제일 쓸데없는 짓. 부정적인 shit, man I ain't got time. 썸머소닉 to 코첼라, 글라스톤베리가 다음. 일상이 축제니까 감사하기도 바빠. Middle finger
-          to the Devil, stop fuckin' up my vibe!
+          {{comment.answer}}
         </p>
         <div class="recomment">답글쓰기</div>
       </div>
     </li>
-
-    <li class="comment">
-      <div class="recommend">
-        <i class="fas fa-caret-up"></i>
-        <span class="recommend-num">5</span>
-        <i class="fas fa-caret-down"></i>
-      </div>
-
-      <div class="comment__content">
-        <span class="comment__writer-and-date">동현이형</span>
-        <p class="comment__body">
-          Don't worry 'bout me. 오지랖 떨지 말고 신경 꺼. 온 세상이 날 등져도 I don't give a fuck. God is watchin' over me, 나 죽을 일 없어. 내
-          걱정은 세상에서 제일 쓸데없는 짓. 부정적인 shit, man I ain't got time. 썸머소닉 to 코첼라, 글라스톤베리가 다음. 일상이 축제니까 감사하기도 바빠. Middle finger
-          to the Devil, stop fuckin' up my vibe!
-        </p>
-        <div class="recomment">답글쓰기</div>
-      </div>
-    </li>
-
-    <li class="comment">
-      <div class="recommend">
-        <i class="fas fa-caret-up"></i>
-        <span class="recommend-num">5</span>
-        <i class="fas fa-caret-down"></i>
-      </div>
-
-      <div class="comment__content">
-        <span class="comment__writer-and-date">동현이형</span>
-        <p class="comment__body">
-          Don't worry 'bout me. 오지랖 떨지 말고 신경 꺼. 온 세상이 날 등져도 I don't give a fuck. God is watchin' over me, 나 죽을 일 없어. 내
-          걱정은 세상에서 제일 쓸데없는 짓. 부정적인 shit, man I ain't got time. 썸머소닉 to 코첼라, 글라스톤베리가 다음. 일상이 축제니까 감사하기도 바빠. Middle finger
-          to the Devil, stop fuckin' up my vibe!
-        </p>
-        <div class="recomment">답글쓰기</div>
-      </div>
-    </li>
-
-    <li class="comment">
-      <div class="recommend">
-        <i class="fas fa-caret-up"></i>
-        <span class="recommend-num">5</span>
-        <i class="fas fa-caret-down"></i>
-      </div>
-
-      <div class="comment__content">
-        <span class="comment__writer-and-date">동현이형</span>
-        <p class="comment__body">
-          Don't worry 'bout me. 오지랖 떨지 말고 신경 꺼. 온 세상이 날 등져도 I don't give a fuck. God is watchin' over me, 나 죽을 일 없어. 내
-          걱정은 세상에서 제일 쓸데없는 짓. 부정적인 shit, man I ain't got time. 썸머소닉 to 코첼라, 글라스톤베리가 다음. 일상이 축제니까 감사하기도 바빠. Middle finger
-          to the Devil, stop fuckin' up my vibe!
-        </p>
-        <div class="recomment">답글쓰기</div>
-      </div>
-    </li>
+    {% endfor %}
   </ul>
 
-  <form class="writing">
-    <input type="text" placeholder="답변을 입력해주세요:)">
-    <button type="submit">
+  <form class="writing" id="done" action="{% url 'commentWrite' qna.id %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="hidden" value="{{ qna.id }}" name="id">
+    <input type="text" placeholder="답변을 입력해주세요:)" name="answer">
+    <button type="submit" form="done">
       <i class="fas fa-arrow-circle-up"></i>
     </button>
   </form>

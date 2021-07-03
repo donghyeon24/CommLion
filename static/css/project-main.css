@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:wght@700&display=swap');
 
 body {
   margin: 0;
@@ -15,62 +15,60 @@ a {
   flex-wrap: nowrap;
   overflow-x: auto;
   margin-top: 100px;
-  height: 90vh;
 }
 
 .container .project-post {
-  width: 960px;
-  height: 772px;
-  margin-left: 60px;
-  background: #f8f8fa;
-  box-shadow: 0 10px 10px -10px black;
   display: flex;
   flex-direction: column;
   margin-bottom: 55px;
-  z-index: 0;
+  width: 960px;
+  margin-left: 60px;
+  background: #f8f8fa;
+  box-shadow: 0 10px 10px -10px black;
 }
 
 .container .project-post img {
   height: 520px;
 }
 
-.container .project-post .title {
-  font-family: "Roboto";
+.container .project-post .content-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px 10px 30px;
+}
+
+.container .project-post .content-container .title {
+  margin-top: 32px;
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
   color: #fe931b;
-  margin-top: 20px;
-  margin-left: 40px;
 }
 
-.container .project-post .content {
-  font-family: "Nanum Gothic", sans-serif;
+.container .project-post .content-container .content {
+  padding: 0 32px;
+  margin: 32px 0 32px 32px;
+  font-family: 'Nanum Gothic', sans-serif;
   font-size: 28px;
-  margin-left: 40px;
-  margin-top: 5px;
 }
 
-.container .project-post .status_dev {
-  font-family: "Roboto";
+.container .project-post .content-container .status_dev,
+.container .project-post .content-container .status_compl {
+  margin-bottom: 16px;
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
-  color: #0038ff;
   text-align: right;
-  margin-right: 20px;
-  margin-bottom: 5px;
 }
 
-.container .project-post .status_compl {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
+.container .project-post .content-container .status_dev {
+  color: blue;
+}
+
+.container .project-post .content-container .status_compl {
   color: red;
-  text-align: right;
-  margin-right: 20px;
-  margin-bottom: 5px;
 }
 
 .writing {
@@ -84,7 +82,7 @@ a {
   margin-left: 920px;
   font-size: 130px;
   font-weight: lighter;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   z-index: 1;
 }
@@ -105,6 +103,6 @@ a {
 
 .container .create-btn span {
   font-size: 112px;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   color: white;
 }
