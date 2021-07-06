@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:wght@700&display=swap');
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-top: 100px;
+}
+
+.container .project-post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 55px;
+  width: 960px;
+  margin-left: 60px;
+  background: #f8f8fa;
+  box-shadow: 0 10px 10px -10px black;
+}
+
+.container .project-post img {
+  height: 520px;
+}
+
+.container .project-post .content-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px 10px 30px;
+}
+
+.container .project-post .content-container .title {
+  margin-top: 32px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  color: #fe931b;
+}
+
+.container .project-post .content-container .content {
+  padding: 0 32px;
+  margin: 32px 0 32px 32px;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 28px;
+}
+
+.container .project-post .content-container .status_dev,
+.container .project-post .content-container .status_compl {
+  margin-bottom: 16px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: right;
+}
+
+.container .project-post .content-container .status_dev {
+  color: blue;
+}
+
+.container .project-post .content-container .status_compl {
+  color: red;
+}
+
+.writing {
+  width: 140px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: black;
+  border: none;
+  color: white;
+  margin-top: -89px;
+  margin-left: 920px;
+  font-size: 130px;
+  font-weight: lighter;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  z-index: 1;
+}
+
+.container .create-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 80px;
+  right: 36px;
+  width: 140px;
+  height: 140px;
+  border-style: none;
+  border-radius: 100px;
+  background-color: black;
+}
+
+.container .create-btn span {
+  font-size: 112px;
+  font-family: 'Nanum Gothic', sans-serif;
+  color: white;
+}

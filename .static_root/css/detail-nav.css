@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@700&display=swap');
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  height: 150px;
+  padding: 0 48px;
+  background-color: white;
+  box-shadow: 0 10px 100px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar .left i {
+  font-size: 48px;
+}
+
+.navbar .center {
+  margin-left: 112px;
+  font-size: 48px;
+  font-family: 'Roboto';
+}
+
+.navbar .right i {
+  margin-left: 32px;
+  font-size: 48px;
+}

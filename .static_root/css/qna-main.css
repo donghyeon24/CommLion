@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:wght@700&display=swap");
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 1800px;
+  margin-top: 100px;
+}
+
+.container .title {
+  position: relative;
+  left: 16px;
+  width: 960px;
+  font-size: 96px;
+  font-weight: 800;
+  font-family: "Roboto", sans-serif;
+  line-height: 112px;
+  letter-spacing: -4px;
+  word-spacing: 12px;
+}
+
+.container .qna-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 1344px;
+  padding-left: 0;
+  margin-top: 80px;
+  white-space: nowrap;
+  overflow-x: auto;
+  list-style: none;
+}
+
+.container .qna-container .question {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 600px;
+  height: 1280px;
+  padding: 36px 24px;
+  margin-left: 100px;
+  border-radius: 100px;
+  background-color: #f8f8fa;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: "Roboto";
+  box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.25);
+}
+
+.container .qna-container .question img {
+  width: 550px;
+  height: 540px;
+  border-radius: 100px;
+}
+
+.container .qna-container .question .content {
+  padding: 0 20px;
+  margin-top: 40px;
+  font-family: "Roboto", sans-serif;
+  white-space: normal;
+}
+
+.container .qna-container .question .content .writer-and-date {
+  font-size: 24px;
+  font-weight: 800;
+  color: #767676;
+}
+
+.container .qna-container .question .content .question__title {
+  margin-top: 10px;
+  font-size: 48px;
+  font-weight: 800;
+  color: black;
+  word-break: break-all;
+}
+
+.container .qna-container .question .content .hashtags {
+  display: flex;
+  margin-top: 10px;
+}
+
+.container .qna-container .question .content .hashtags .hashtag {
+  box-sizing: border-box;
+  height: 56px;
+  padding: 0 16px;
+  margin-right: 20px;
+  border-radius: 40px;
+  border-color: #fe931b;
+  font-size: 24px;
+  font-weight: 800;
+  color: #fe931b;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.container .qna-container .question .content .question__body {
+  height: 300px;
+  margin-top: 32px;
+  font-size: 24px;
+  font-weight: 300;
+  color: #767676;
+  overflow-y: hidden;
+}
+
+.container .qna-container .question .content .answer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 24px;
+  font-weight: 800;
+  color: black;
+}
+
+.container .qna-container .question .content .answer div {
+  display: flex;
+  align-items: center;
+}
+
+.container .qna-container .question .content .answer div i {
+  margin-right: 10px;
+  font-size: 48px;
+}
+
+.container .qna-container .question .content .answer .state {
+  font-size: 26px;
+  color: blue;
+}
+
+.container .qna-btn {
+  position: relative;
+  top: 40px;
+  width: 250px;
+  height: 120px;
+  background-color: #ff9e1b;
+  border-radius: 40px;
+  border: none;
+  color: white;
+  font-family: roboto;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.nav-bottom {
+  margin-left: 40px;
+}
+
+.nav-bottom .pre-btn {
+  display: inline-block;
+  position: relative;
+  top: 96px;
+  width: 140px;
+  height: 140px;
+  padding-right: 20px;
+  border-style: none;
+  border-radius: 100px;
+  background-color: black;
+}
+
+.nav-bottom .pre-btn span {
+  font-size: 80px;
+  font-family: "Nanum Gothic", sans-serif;
+  color: white;
+}
+
+.nav-bottom .nav-bottom-real {
+  position: relative;
+  left: 200px;
+  bottom: 48px;
+  width: calc(100vw - 260px);
+  padding-left: 0;
+  white-space: nowrap;
+  overflow-x: auto;
+  list-style: none;
+}
+
+.nav-bottom .nav-bottom-real li {
+  display: inline-block;
+  width: 150px;
+  height: 100px;
+  margin-right: 4px;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: "Roboto";
+  color: #767676;
+}
+
+.nav-bottom .nav-bottom-real li span {
+  position: relative;
+  top: 16px;
+}
+
+.nav-bottom .nav-bottom-real .nav-bottom-active span {
+  color: black;
+}
+
+.nav-bottom .nav-bottom-real .nav-bottom-active10 span {
+  color: black;
+}
+
+.nav-bottom .nav-bottom-real .nav-bottom-active10 .selected-mark {
+  position: relative;
+  left: 48px;
+  width: 12px;
+  height: 12px;
+  border-radius: 30px;
+  background-color: black;
+}
+
+.nav-bottom .nav-bottom-real .nav-bottom-active .selected-mark {
+  position: relative;
+  left: 29px;
+  width: 12px;
+  height: 12px;
+  border-radius: 30px;
+  background-color: black;
+}
+
+.not_exist {
+  text-align: center;
+  margin: auto;
+}
