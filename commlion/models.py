@@ -52,7 +52,7 @@ class SessionPost(models.Model):
     session_year = models.IntegerField()
     session_num = models.IntegerField()
     session_title = models.CharField(max_length=30)
-    session_file = models.FileField(upload_to="pdf", null=True, blank=True)
+    session_file = models.FileField(upload_to="pdf/", null=True, blank=True)
     session_content = models.TextField()
 
     student_id = ForeignKey(

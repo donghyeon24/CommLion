@@ -40,7 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'commlion.apps.CommlionConfig',
+    'cloudinary_storage',
+    'cloudinary',
 ]
+
+CLOUDINARY_STORAGE = {
+             'CLOUD_NAME': 'dniijplbi',
+             'API_KEY': '754969234597398',
+             'API_SECRET': 'Cz4ULwMLBL6yt1Gkbkpl8uK2SAU'
+            }
+
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
