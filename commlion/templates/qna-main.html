@@ -23,7 +23,7 @@
     <li class="question" onclick="location.href='{% url 'qnaDetail' qna.id %}'">
       <img src="{{ qna.file.url }}" alt="!Notfounded">
       <div class="content">
-        <div class='writer-and-date'>죠르디 · {{qna.pub_date}}</div>
+        <div class='writer-and-date'>{{ me.student_name }} · {{qna.pub_date}}</div>
         <div class="question__title">{{qna.title}}</div>
         <div class="hashtags">
           <button type="button" onclick="location.href=''" class="hashtag">#{{ qna.hashtag1 }}</button>
@@ -35,7 +35,7 @@
         <div class="answer">
           <div>
             <i class="far fa-comment-dots" fa-10x></i>
-            <span class="answer__num">답변 7</span>
+            <span class="answer__num">답변 2</span>
           </div>
           <div class="state">해결 중</div>
         </div>
