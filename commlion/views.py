@@ -38,11 +38,13 @@ def sessionMain(request, session_num):
 
 
 def qnaMain(request, session_num):
+    check_exist_student = Student.objects.filter(student_id=0)
     exist_session = SessionPost.objects.filter(session_num=session_num)
-    if exist_session.exists():
+    if exist_session.exists() & check_exist_student.exists():
         session = SessionPost.objects.get(session_num=session_num)
+        me = Student.objects.get(student_id=0)
         qnas = QnaPost.objects.filter(session_id=session)
-        return render(request, 'qna-main.html', {'qnas': qnas, 'session': session, 'range': reversed(range(1, 11))})
+        return render(request, 'qna-main.html', {'qnas': qnas, 'session': session, 'range': reversed(range(1, 11)), 'me': me})
 
     else:
         return render(request, 'qna-main.html')
