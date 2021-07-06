@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@700&display=swap');
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.intro h1 {
+  font-family: 'roboto';
+  font-size: 96px;
+}
+
+.intro {
+  padding: 0 60px;
+}
+
+.intro img {
+  width: 960px;
+  height: 1299px;
+}
+
+.intro div {
+  padding: 0 48px;
+}
+
+.intro h1 {
+  margin-bottom: 32px;
+  font-family: 'roboto';
+  font-size: 96px;
+}
+
+.intro p {
+  margin: 0 0 64px 0;
+  font-weight: 300;
+  font-size: 44px;
+}
+
+.intro button {
+  width: 250px;
+  height: 120px;
+  background: #000000;
+  border-radius: 40px;
+  font-size: 40px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  color: white;
+}

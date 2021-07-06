@@ -1,0 +1,41 @@
+input {
+  width: 960px;
+  border: none;
+  border-bottom: 2px solid rgb(206, 206, 206);
+  margin-bottom: 30px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.write_input {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  height: 188px;
+  margin-left: 60px;
+  margin-bottom: 0px;
+  margin-top: 76px;
+}
+
+.write_input_last {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  width: 960px;
+  height: 900px;
+  margin-left: 60px;
+  margin-bottom: 0px;
+  border: none;
+  margin-top: 98px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: 'Roboto';
+  font-size: 48px;
+  color: #e5e5e5;
+}
