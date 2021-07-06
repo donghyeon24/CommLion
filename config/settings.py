@@ -50,7 +50,6 @@ CLOUDINARY_STORAGE = {
              'API_SECRET': 'TQ-TtFLvLxxetFne-8NhjSpt7H0'
             }
 
-DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -155,3 +154,5 @@ MEDIA_URL = '/media/'  # 항상 / 로 끝나도록 설정
 
 # 업로드된 파일을 저장할 디렉토리 경로
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
