@@ -21,7 +21,7 @@
     {% for qna in qnas %}
 
     <li class="question" onclick="location.href='{% url 'qnaDetail' qna.id %}'">
-      <img src="{{ qna.file.url }}" alt="!Notfounded">
+      <img src="{{ qna.file.url }}" alt="{{ qna.file.name }}">
       <div class="content">
         <div class='writer-and-date'>{{ me.student_name }} · {{qna.pub_date}}</div>
         <div class="question__title">{{qna.title}}</div>
