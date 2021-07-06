@@ -93,6 +93,8 @@ a {
   font-weight: 800;
   font-size: 32px;
   color: #ff9e1b;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .container .notice-post .content {
